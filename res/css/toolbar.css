@@ -1,0 +1,242 @@
+/*
+
+    Dans ce fichier CSS, il y a le css de
+    - ToolBar
+    - Clock
+    - Clock.fullScreen
+
+*/
+
+/* ToolBar */
+
+.toolBar
+{
+	list-style: none;
+	padding: 35px;
+	margin: 0px auto;
+	margin-top: 70px;
+	text-align: left;
+	display: none;
+	
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	
+	transition-property: all;
+	transition-duration: .5s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .5s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: .5s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: .5s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: .5s;
+}
+
+.toolBar li
+{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 10px;
+	padding: 17px;
+	background: rgba(0,0,0,.5);
+	border-radius: 100px;
+	font-size: 0px;
+	cursor: pointer;
+	
+	background: white;
+	box-shadow: 0px 4px 4px rgba(0,0,0,.5);
+	
+	transition-property: all;
+	transition-duration: .25s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .25s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: .25s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: .25s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: .25s;
+}
+
+.toolBar li:hover
+{
+	background: rgb(25,25,25);
+}
+
+.toolBar li:active
+{
+	background: #000;
+	box-shadow: 0px 0px 15px #000;
+}
+
+.toolBar li img
+{
+	width: 16px;
+	height: 16px;
+	margin: 0px;
+	
+	-webkit-filter: invert(85%);
+	   -moz-filter: invert(85%);
+		-ms-filter: invert(85%);
+		 -o-filter: invert(85%);
+		    filter: invert(85%);
+	
+	transition-property: all;
+	transition-duration: .25s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .25s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: .25s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: .25s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: .25s;
+}
+
+.toolBar li:hover img
+{
+	-webkit-filter: invert(0%);
+	   -moz-filter: invert(0%);
+		-ms-filter: invert(0%);
+		 -o-filter: invert(0%);
+		    filter: invert(0%);
+}
+
+.toolBar p
+{
+	background: rgba(0,0,0,.8);
+	padding: 5px 10px;
+	margin: 0px 10px;
+	color: white;
+	font-size: 18px;
+	font-family: 'RobotoLight', trebuchet ms, tahoma, verdana, arial, serif;
+	display: none;
+	border-radius: 4px;
+	vertical-align: middle;
+}
+
+/* Clock */
+
+.clock
+{
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	
+	background: white;
+	box-shadow: 0px 3px 4px rgba(0,0,0,.5);
+	color: black;
+	margin: 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 0px;
+	display: block;
+	
+	transition-property: all;
+	transition-duration: .5s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .5s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: .5s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: .5s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: .5s;
+}
+
+.fullScreen
+{
+	top: 0px;
+	left: 0px;
+	margin: 0px;
+	background: rgb(50,50,50);
+	color: white;
+	border-radius: 0px;
+}
+
+.clock:hover
+{
+	background: rgb(35,35,35);
+}
+
+.central .clock *
+{
+	margin: 0px;
+	font-size: 16px;
+	font-family: 'RobotoCondensed', trebuchet ms, tahoma, verdana, arial, serif;
+	color: black;
+}
+
+.central .clock:hover *
+{
+	color: white;
+}
+
+.clock .ctn,
+.clock .full
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.clock .ctn
+{
+	padding: 10px 25px;
+	padding-top: 8px;
+}
+
+.clock .full
+{
+	height: 100%;
+}
+
+.central .clock h1
+{
+	font-weight: normal;
+	font-size: 32px;
+	margin: 0px;
+	font-family: 'RobotoLight', trebuchet ms, tahoma, verdana, arial, serif;
+}
+
+.clock .pub
+{
+	display: none;
+}
+
+.fullScreen h1
+{
+	font-size: 100px;
+}
+
+.fullScreen p
+{
+	font-size: 18px;
+}
+
+.fullScreen .pub
+{
+	display: block;
+	padding-top: 15px;
+	margin-top: 15px;
+	border-top: 3px solid white;
+	font-size: 16px;
+}

@@ -1,0 +1,266 @@
+/*
+
+    Dans ce fichier CSS, il y a le css de
+    - Menu (qui s'affiche après un clic sur le bouton plus)
+    - Popup
+    - HidePopup
+
+*/
+
+/* Menu add item */
+
+.menu
+{
+	list-style: none;
+	padding: 10px 0px;
+	margin: 15px;
+	background: rgb(50,50,60);
+	border-radius: 5px;
+	box-shadow: 0px 3px 4px rgba(0,0,0,.3);
+	text-align: left;
+	width: 0px;
+	overflow: hidden;
+	
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	
+	transition-property: all;
+	transition-duration: .5s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .5s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: .5s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: .5s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: .5s;
+}
+
+.menu li
+{
+	display: block;
+	font-size: 0px;
+	padding: 0px 10px;
+	cursor: pointer;
+	
+	transition-property: all;
+	transition-duration: .25s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .25s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: .25s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: .25s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: .25s;
+}
+
+.menu li:hover
+{
+	background: rgba(0,0,0,.3);
+}
+
+.menu li:active
+{
+	background: rgba(0,0,0,.5);
+}
+
+.menu li *
+{
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 16px;
+}
+
+.menu li img
+{
+	height: 20px;
+	margin: 15px;
+}
+
+/* Popup */
+
+.popup
+{
+	display: none;
+}
+
+.hidePopup
+{
+	background: rgba(0,0,0,.5);
+	border-right: 10px solid transparent;
+	background-image: url("../img/close.png");
+	background-position: right 15px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	
+	transition-property: all;
+	transition-duration: 1s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 1s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: 1s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: 1s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: 1s;
+}
+
+.hidePopup:hover
+{
+	background-color: rgba(0,0,0,.25);
+}
+
+.popup .form
+{
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	
+	background: rgb(255,0,100);
+	background: rgb(255,100,0);
+	background: rgb(85,170,0);
+	text-align: left;
+	padding: 30px;
+	overflow: auto;
+	z-index: 10;
+	width: 375px;
+	margin: 15px;
+	border-radius: 5px;
+	box-shadow: 0px 3px 4px rgba(0,0,0,.5);
+	
+	transition-property: all;
+	transition-duration: .15s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .15s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: .15s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: .15s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: .15s;
+}
+
+#popupNewChrono .form {background: rgb(255,100,0);}
+#popupNewCalcul .form {background: rgb(0,120,200);}
+#popupNewConvert .form {background: rgb(255,0,100);}
+
+.popup .form h1
+{
+	margin: -30px;
+	margin-bottom: 15px;
+	padding: 30px;
+	text-align: center;
+	background: rgba(0,0,0,.2);
+}
+
+.popup .form h2
+{
+	font-size: 20px;
+	margin: 10px 5px;
+	margin-top: 35px;
+	font-weight: normal;
+	font-family: 'RobotoRegular', trebuchet ms, tahoma, verdana, arial, serif;
+}
+
+.popup .form h3
+{
+	margin: 0px 5px;
+	margin-top: 10px;
+	font-weight: normal;
+	font-size: 16px;
+	font-family: 'RobotoBold', trebuchet ms, tahoma, verdana, arial, serif;
+	text-transform: uppercase;
+}
+
+.popup .form input[type=text],
+.popup .form input[type=number]
+{
+	width: 100%;
+	font-size: 16px;
+	background: transparent;
+	border: none;
+	color: white;
+	border-bottom: 2px solid white;
+	margin: 10px 5px;
+	margin-top: 0px;
+}
+
+.popup .form input[type=number]
+{
+	font-size: 45px;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	color: white;
+	font-family: 'RobotoRegular', trebuchet ms, tahoma, verdana, arial, serif;
+	width: 100%;
+}
+
+.popup .form .numbers
+{
+	font-size: 0px;
+	
+	position: relative;
+	left: 5px;
+}
+
+.popup .form .numbers .cell
+{
+	background: red;
+	display: inline-block;
+	width: 28%;
+	margin-right: 1%;
+	margin-bottom: 4px;
+	color: white;
+	padding: 0px 7px;
+	border-radius: 5px;
+	background: rgba(0,0,0,.5);
+}
+
+.popup .form input[type=button]
+{
+	border: 3px solid white;
+	background: white;
+	color: rgb(85,170,0);
+	box-shadow: 0px 3px 4px rgba(0,0,0,.3);
+}
+
+#popupNewChrono .form input[type=button] {color: rgb(255,100,0);}
+#popupNewCalcul .form input[type=button] {color: rgb(0,120,200);}
+#popupNewConvert .form input[type=button] {color: rgb(255,0,100);}
+
+.popup .form input[type=button]:hover,
+#popupNewChrono .form input[type=button]:hover,
+#popupNewCalcul .form input[type=button]:hover,
+#popupNewConvert .form input[type=button]:hover
+{
+	background: transparent;
+	color: white;
+	border: 3px solid white;
+}

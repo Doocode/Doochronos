@@ -1,0 +1,412 @@
+body
+{
+	background-color: rgb(50,50,50);
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-attachment: fixed;
+	background-position: center center;
+}
+
+header
+{
+    background: rgb(50,50,50);
+    box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+    
+    background: #fff;
+}
+
+header .ctn img
+{
+	-webkit-filter: invert(85%);
+	   -moz-filter: invert(85%);
+		-ms-filter: invert(85%);
+		 -o-filter: invert(85%);
+		    filter: invert(85%);
+}
+
+.central
+{
+	position: fixed;
+	top: 70px;
+	left: 0px;
+	right: 0px;
+	bottom: 120px;
+	
+	overflow: auto;
+	color: white;
+	text-align: center;
+    font-size: 0px;
+    z-index: -10;
+}
+
+.central .aligner
+{
+	width: 0px;
+	height: 100%;
+}
+
+.central .aligner,
+.central .redirect,
+.central .app
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.central .app
+{
+	display: none;
+    width: 100%;
+}
+
+.central *
+{
+	font-family: 'RobotoRegular', trebuchet ms, tahoma, verdana, arial, serif;	
+}
+
+.central h1
+{
+	font-weight: normal;
+	font-size: 28px;
+	color: white;
+	font-family: 'RobotoLight', trebuchet ms, tahoma, verdana, arial, serif;
+}
+
+.central p
+{
+	font-size: 20px;
+	font-family: 'RobotoLight', trebuchet ms, tahoma, verdana, arial, serif;
+	max-width: 700px;
+	line-height: 30px;
+    margin: 20px auto;
+}
+
+input[type=submit],input[type=reset],input[type=image],input[type=button],button
+{
+	border: 3px solid white;
+	background: white;
+	border-radius: 4px;
+	padding: 10px 15px;
+	min-width: 150px;
+	color: rgb(255,0,100);
+	font-size: 16px;
+	margin: 5px;
+	font-family: 'RobotoRegular', segoe ui, trebuchet ms, tahoma, verdana, arial, serif;
+	cursor: pointer;
+	
+	-webkit-transition: all .2s ease;
+       -moz-transition: all .2s ease;
+        -ms-transition: all .2s ease;
+         -o-transition: all .2s ease;
+            transition: all .2s ease;
+}
+
+input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[type=button]:hover,button:hover
+{
+	background: transparent;
+	color: white;
+	border: 3px solid white;
+}
+
+.listCards
+{
+	overflow: hidden;
+	overflow-x: hidden;
+	font-size: 0px;
+	padding: 25px;
+	display: none;
+	
+	/*position: fixed;
+	left: 0px;
+	right: 0px;
+	bottom: 120px;*/
+}
+
+.listCards .card
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 250px;
+	height: 300px;
+	width: 300px;
+	padding: 20px;
+	background: rgb(50,50,60);
+	/*border: 5px solid transparent;*/
+	border-radius: 7px;
+	box-shadow: 0px 3px 5px rgba(0,0,0,.5);
+	margin: 15px;
+	text-align: left;
+	cursor: default;
+	overflow: hidden;
+	position: relative;
+	
+	transition-property: all;
+	transition-duration: .25s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .25s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: .25s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: .25s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: .25s;
+}
+/*
+.listCards .card:hover
+{
+	border-color: white;
+}
+
+.listCards .card:active
+{
+	-webkit-transform: scale(.9);
+	-moz-transform: scale(.9);
+	-ms-transform: scale(.9);
+	-o-transform: scale(.9);
+	transform: scale(.9);
+}*/
+/*
+.finished
+{
+	background: rgb(50,50,60);
+}*/
+
+.finished::before,
+.paused::before
+{
+	content: "Terminé";
+	background: rgba(0,0,0,.9);
+	box-shadow: 0px 3px 5px black inset;
+	text-shadow: 0px 0px 10px black;
+	font-family: 'Roboto', trebuchet ms, tahoma, verdana, arial, serif;
+	font-size: 20px;
+	text-transform: uppercase;
+	padding: 20px;
+	display: block;
+	
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+.paused::before
+{
+	content: "En pause";
+}
+
+.listCards .card *
+{
+	font-size: 18px;
+	margin: 0px;
+}
+
+.listCards .card center img
+{
+	margin: 125px 0px;
+	max-height: 50px;
+	max-width: 50px;
+}
+
+.listCards .card h1
+{
+	font-size: 45px;
+	margin-top: -10px;
+	font-family: 'RobotoRegular', trebuchet ms, tahoma, verdana, arial, serif;
+}
+
+.listCards .convert p
+{
+	font-size: 18px;
+	font-family: 'RobotoRegular', trebuchet ms, tahoma, verdana, arial, serif;
+}
+
+.listCards .card h4,
+.listCards .card th
+{
+	font-family: 'RobotoCondensed', trebuchet ms, tahoma, verdana, arial, serif;
+	font-weight: normal;
+}
+
+.listCards .card table
+{
+	width: 250px;
+	width: 100%;
+}
+
+.listCards .timer table
+{
+	margin-top: 160px;
+}
+
+.listCards .card td
+{
+	font-size: 27px;
+	font-family: 'RobotoLight', trebuchet ms, tahoma, verdana, arial, serif;
+	margin-top: -5px;
+}
+
+.listCards .timer td
+{
+	width: 50%;
+}
+
+.listCards .convert th
+{
+	width: 33%;
+	font-size: 16px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.listCards .convert td
+{
+	width: 33%;
+}
+
+.listCards .convert .lastRow
+{
+	font-size: 18px;
+	padding-top: 10px;
+}
+
+.listCards .convert tr:last-child td
+{
+	font-size: 14px;
+	white-space: normal;
+	line-height: initial;
+	font-family: 'RobotoRegular', trebuchet ms, tahoma, verdana, arial, serif;
+}
+
+.listCards .card .listActs
+{
+	background: white;
+	overflow: hidden;
+	list-style: none;
+	padding: 10px 0px;
+	margin: 0px;
+	opacity: 0;
+	
+	-webkit-transform: scale(.8);
+	-moz-transform: scale(.8);
+	-ms-transform: scale(.8);
+	-o-transform: scale(.8);
+	transform: scale(.8);
+	
+	position: absolute;
+	top: 100%;
+	top: 0%;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	
+	transition-property: all;
+	transition-duration: .5s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .5s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: .5s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: .5s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: .5s;
+}
+
+.listCards .card:hover .listActs
+{
+	opacity: 1;
+	top: 0px;
+	
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+}
+
+.listCards .card .listActs li
+{
+	padding: 5px 20px;
+	color: black;
+	cursor: pointer;
+}
+
+.listCards .card .listActs li:hover
+{
+	background: rgb(50,50,50);
+	color: white;
+}
+
+.reprise,
+.edit
+{
+	display: none;
+}
+
+.listCards .card .listActs li:active
+{
+	background: #000;
+	color: white;
+}
+
+.listCards .card .listActs li *
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.listCards .card .listActs li img
+{
+	width: 16px;
+	height: 16px;
+	-webkit-filter: invert(100%);
+	   -moz-filter: invert(100%);
+		-ms-filter: invert(100%);
+		 -o-filter: invert(100%);
+		    filter: invert(100%);
+}
+
+.listCards .card .listActs li:hover img
+{
+	-webkit-filter: invert(0%);
+	   -moz-filter: invert(0%);
+		-ms-filter: invert(0%);
+		 -o-filter: invert(0%);
+		    filter: invert(0%);
+}
+
+.listCards .card .listActs li p
+{
+	font-size: 14px;
+	margin-left: 10px;
+}
+
+/* QuickMenu - Pour avoir un menu compact dans les cartes */
+
+.listCards .quickmenu .listActs
+{
+    top: inherit;
+}
+
+.listCards .quickmenu .listActs li
+{
+	display: inline-block;
+    font-size: 0px;
+    padding: 15px;
+    border-radius: 100%;
+}
+
+.listCards .quickmenu .listActs li p
+{
+	display: none;
+}

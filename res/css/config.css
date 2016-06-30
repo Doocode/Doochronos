@@ -1,0 +1,739 @@
+body
+{
+	margin: 0px;
+	padding-bottom: 70px;
+	z-index: -3;
+	
+	position: relative;
+}
+
+header
+{
+	z-index: -1;
+}
+
+.page
+{
+	z-index: -2;
+	
+	position: relative;
+}
+
+.page article
+{
+	border: 3px solid rgb(255,100,0);
+	border-radius: 5px;
+	display: block;
+	margin: 0px;
+	margin-bottom: 30px;
+}
+
+.page article h3
+{
+	margin: 0px;
+	padding: 10px 15px;
+	font-family: 'Roboto', trebuchet ms, tahoma, verdana, arial, serif;
+	font-weight: normal;
+	background:  rgb(255,100,0);
+	color: white;
+}
+
+.page article h4
+{
+	/*margin: 0px;
+	margin-bottom: 30px;
+	font-family: 'RobotoCondensed', trebuchet ms, tahoma, verdana, arial, serif;
+	text-transform: uppercase;*/
+	margin: 10px 15px;
+}
+
+.page article p
+{
+	margin: 10px 15px;
+}
+
+.page article input[type=submit],.page article input[type=reset],.page article input[type=image],.page article input[type=button],.page article button
+{
+	margin: 0px 15px;
+	margin-bottom: 15px;
+}
+
+.selectMotor
+{
+	display: inline-block;
+	
+	position: relative;
+	top: -3px;
+}
+
+.selectMotor *
+{
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.selectMotor img
+{
+	width: 30px;
+	height: 30px;
+	border-radius: 30px;
+	margin: 0px 5px;
+}
+
+.motors
+{
+	display: none;
+	z-index: 15;
+}
+
+.quitListMotors
+{
+	background: black;
+	border-right: 10px solid transparent;
+	background-image: url("../img/close.png");
+	background-position: right 15px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	
+	transition-property: all;
+	transition-duration: 1s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 1s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: 1s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: 1s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: 1s;
+}
+
+.quitListMotors:hover
+{
+	background-color: rgba(0,0,0,.5);
+}
+
+.listMotors
+{
+	position: fixed;
+	right: 50px;
+	left: 0px;
+	bottom: 0px;
+	top: 0px;
+	
+	background: rgb(50,50,50);
+	text-align: center;
+	padding: 50px;
+	overflow: auto;
+	
+	transition-property: all;
+	transition-duration: .3s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .3s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: .3s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: .3s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: .3s;
+}
+
+.listMotors h4
+{
+	display: none;
+}
+
+.listMotors ul
+{
+	padding: 20px;
+	margin: -30px;
+	padding-top: 0px;
+	margin-top: 0px;
+	list-style: none;
+	overflow-y: auto;
+	
+	transition-property: all;
+	transition-duration: .30s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .30s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: .30s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: .30s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: .30s;
+}
+
+.listMotors ul span
+{
+	/*background: rgba(0,0,0,.3);
+	display: inline-block;*/
+}
+
+.listMotors ul li
+{
+	display: inline-block;
+	margin: 3px 0px;
+	padding: 10px;
+	padding-bottom: 5px;
+	text-align: left;
+	cursor: pointer;
+	vertical-align: top;
+	color: white;
+	
+	transition-property: all;
+	transition-duration: .2s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .2s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: .2s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: .2s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: .2s;
+}
+
+.listMotors ul li:hover
+{
+	background: rgb(255,100,0);
+	color: white;
+}
+
+.listMotors ul li img
+{
+	height: 100px;
+	width: 100px;
+	
+	transition-property: all;
+	transition-duration: .5s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .5s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: .5s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: .5s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: .5s;
+}
+
+.listMotors ul li p
+{
+	width: 100px;
+	font-size: 16px;
+	margin: 5px 0px;
+	line-height: inherit;
+	font-family: 'RobotoCondensed', trebuchet ms, tahoma, verdana, arial, serif;
+}
+
+.listMotors ul .disable
+{
+	opacity: .5;
+}
+
+.listMotors ul .new
+{
+	background: rgba(255,255,255,.1);
+}
+
+.listMotors ul .new p::before
+{
+	content: "Nouveau";
+	font-family: 'Roboto', trebuchet ms, tahoma, verdana, arial, serif;
+	font-weight: bold;
+	min-width: 10px;
+	font-size: 12px;
+	margin: auto;
+	display: block;
+}
+
+.listMotors ul .disable p::before
+{
+	content: "Désactivé";
+	font-family: 'Roboto', trebuchet ms, tahoma, verdana, arial, serif;
+	font-weight: bold;
+	min-width: 10px;
+	font-size: 12px;
+	margin: auto;
+	display: block;
+}
+	
+.preview
+{
+	display: none;
+}
+	
+.preview *
+{
+	margin: 0px;
+}
+	
+.page article .preview p
+{
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	margin: auto;
+	margin-bottom: 15px;
+	border: 1px solid rgba(0,0,0,.5);
+	box-shadow: 0px 1px 0px rgba(255,255,255,.7), 0px -1px 0px rgba(0,0,0,.7), 0px 15px 30px rgba(0,0,0,.5) inset;
+}
+
+.colorEditor
+{
+	background: rgb(50,50,50);
+	margin: 10px 15px;
+	margin-right: 0px;
+	margin-top: 0px;
+	color: white;
+}
+
+.colorEditor .titleBar
+{
+	background: rgb(255,100,0);
+	display: none;
+}
+
+.colorEditor .titleBar *
+{
+	display: inline-block;
+	vertical-align: middle;
+	border: none;
+	margin: 0px;
+	padding: 0px;
+	border-radius: 0px;
+	font-size: 20px;
+	font-family: 'RobotoRegular', trebuchet ms, tahoma, verdana, arial, serif;
+}
+
+.colorEditor .titleBar button img
+{
+	height: 21px;
+	padding: 17px;
+	padding-left: 20px;
+}
+
+.colorEditor h5
+{
+	font-size: 18px;
+	padding: 10px 20px;
+	margin: 0px;
+	color: white;
+	font-weight: normal;
+	text-align: left;
+	text-transform: uppercase;
+	font-family: 'RobotoCondensed', trebuchet ms, tahoma, verdana, arial, serif;
+}
+
+.colorEditor .customiseColor
+{
+	background: rgb(70,70,70);
+}
+
+.colorEditor .customiseColor h5
+{
+	padding-bottom: 0px;
+}
+
+.colorEditor .colorSelector h5
+{
+	padding-top: 0px;
+	padding-left: 5px;
+}
+
+.colorEditor .colorSelector
+{
+	list-style: none;
+	padding: 10px;
+	margin: 0px;
+	text-align: center;
+}
+
+.colorEditor .colorSelector br
+{
+	margin: 5px;
+	display: block;
+}
+
+.colorEditor .colorSelector li
+{
+	border: 3px solid white;
+	width: 30px;
+	height: 30px;
+	margin: 5px;
+	margin-top: 0px;
+	padding: 2px;
+	border-radius: 100px;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+	
+	transition-property: all;
+	transition-duration: .25s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 1s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: .25s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: 1s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: 1s;
+}
+
+.colorEditor .colorSelector li:hover
+{
+	box-shadow: 0px 0px 15px white;
+}
+
+.colorEditor .colorSelector li:last-child:hover
+{
+	box-shadow: none;
+}
+
+.colorEditor .viewer,
+.colorEditor .editor,
+.colorEditor .editor p span,
+.colorEditor .editor p input
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.colorEditor .viewer
+{
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	margin: 25px;
+	border: 1px solid rgba(0,0,0,.5);
+	box-shadow: 0px 1px 0px rgba(255,255,255,.7), 0px -1px 0px rgba(0,0,0,.7), 0px 15px 30px rgba(0,0,0,.5) inset;
+	
+	transition-property: all;
+	transition-duration: 1s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 1s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: 1s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: 1s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: 1s;
+}
+
+.colorEditor .viewer:hover
+{
+	box-shadow: 0px -1px 0px rgba(255,255,255,.7), 0px 1px 0px rgba(0,0,0,.7), 0px -15px 30px rgba(0,0,0,.5) inset;
+}
+
+.colorEditor .editor
+{
+	position: relative;
+	left: -15px;
+}
+
+.colorEditor .editor p
+{
+	margin: 8px 0px;
+	text-align: right;
+	font-weight: bold;
+}
+
+.colorEditor .editor p span
+{
+	width: 70px;
+	margin-right: 10px;
+}
+
+.colorEditor .editor p input
+{
+	width: 135px;
+	color: white;
+	font-size: 16px;
+	padding: 4px 10px;
+	border-radius: 4px;
+
+	background: rgba(0,0,0,.3);
+	border: 1px solid rgba(0,0,0,.5);
+}
+
+input[type=radio]
+{
+	display: none;
+}
+
+label
+{
+	background: rgba(0,0,0,.1);
+	padding: 15px 20px;
+	display: inline-block;
+	cursor: pointer;
+	width: 145px;
+	height: 100px;
+}
+
+label img
+{
+	display: block;
+	width: 50px;
+	height: 50px;
+	margin: 0px;
+	margin-bottom: 5px;
+	border-radius: 100px;
+	border: 3px solid white;
+	
+	border: none;
+	border-radius: 0px;
+	width: 30px;
+	height: 30px;
+}
+
+input[type="radio"]:checked + label
+{
+	background: rgb(50,50,50);
+	color: white;
+}
+
+label:hover,
+input[type="radio"]:checked + label:hover
+{
+	background: rgb(255,100,0);
+	background: rgb(25,25,25);
+	color: white;
+}
+
+.saveBar
+{
+	background: rgb(25,25,25);
+	color: white;
+	box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+	text-align: center;
+	font-size: 14px;
+	padding: 10px;
+	z-index: 10;
+	
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+.saveBar *
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.saveBar input
+{
+	padding: 5px 10px;
+	font-size: 14px;
+	margin: 5px 15px;
+}
+
+@media screen and (max-width: 1000px)
+{
+	.saveBar
+	{
+		top: inherit;
+		bottom: 0px;
+	}
+
+	.saveBar p
+	{
+		display: block;
+		margin: 0px;
+		display: none;
+	}
+
+	.page article
+	{
+		margin-bottom: 10px;
+	}
+
+	.listMotors
+	{
+		padding: 0px;
+	}
+
+	.listMotors ul
+	{
+		margin: 0px;
+		padding: 10px;
+	}
+
+	.listMotors ul li img
+	{
+		height: 80px;
+	}
+
+	.listMotors ul li img,
+	.listMotors ul li p
+	{
+		width: 80px;
+		font-size: 12px;
+	}
+
+	table
+	{
+		margin-top: -15px;
+	}
+
+	table td h4
+	{
+		display: none;
+	}
+	
+	table td
+	{
+		display: block;
+	}
+
+	table td:before
+	{
+		content: attr(data-label);
+		font-weight: bold;
+		display: block;
+		margin: 10px 15px;
+		margin-top: 0px;
+	}
+
+	#displayTbl td:before
+	{
+		content: attr(data-label);
+		font-weight: bold;
+		display: block;
+		margin: 10px 5px;
+		margin-top: 0px;
+	}
+	
+	.preview
+	{
+		display: block;
+	}
+
+	.colorEditor 
+	{
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		display: none;
+		z-index: 15;
+		margin: 0px;
+		
+		position: fixed;
+		top: 0px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+	}
+
+	.colorEditor .titleBar
+	{
+		display: block;
+	}
+
+	.colorEditor .colorSelector
+	{
+		padding: 15px 20px;
+		white-space: nowrap;
+		overflow-x: auto;
+		overflow-y: hidden;
+		padding-top: 0px;
+	}
+
+	.colorEditor .colorSelector br
+	{
+		margin: 0px;
+		display: block;
+	}
+
+	.colorEditor .colorSelector li
+	{
+		margin: 6px 3px;
+		padding: 20px;
+		border-radius: 7px;
+	}
+	
+	.colorEditor .customiseColor
+	{
+		text-align: center;
+	}
+
+	.colorEditor .viewer,
+	.colorEditor .viewer:hover
+	{
+		height: 70px;
+		border-radius: 7px;
+		border: 3px solid white;
+		box-shadow: none;
+		width: inherit;
+		display: block;
+		margin: 20px;
+	}
+	
+	.colorEditor .editor
+	{
+		left: 0px;
+		margin: auto;
+		display: block;
+		padding: 0px 20px;
+		padding-bottom: 1px;
+		width: inherit;
+	}
+	
+	.colorEditor .editor p span,
+	.colorEditor .editor p input
+	{
+		display: block;
+		text-align: left;
+		font-family: 'RobotoRegular', trebuchet ms, tahoma, verdana, arial, serif;
+		font-weight: normal;
+	}
+
+	.colorEditor .editor p input
+	{
+		width: 100%;
+		color: white;
+		font-size: 24px;
+		padding: 5px 0px;
+		border-radius: 0px;
+
+		background: transparent;
+		border: none;
+		border-bottom: 3px solid white;
+		font-family: 'RobotoRegular', trebuchet ms, tahoma, verdana, arial, serif;
+		margin-bottom: 30px;
+	}
+}
