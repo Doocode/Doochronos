@@ -28,14 +28,3 @@
 		<p>Convertir une durée</p>
 	</li>
 </ul>
-
-<!-- L'affichage de la date et heure -->
-<div class="clock" onclick="showTime();">
-	<div class="full"></div>
-	<div class="ctn">
-		<h1>00:00</h1>
-		<p>Lundi 1er Mars 2000</p>
-		
-		<p class="pub">Voyagez dans le temps avec Doochronos</p>
-	</div>
-</div>
