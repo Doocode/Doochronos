@@ -18,7 +18,7 @@
 		<div class="page">
 			<h1>A propos de Doochronos</h1>
 			<img id="pub" src="res/img/ident.png" />
-			<h2 style="font-weight: normal; color: white; background: rgb(255,0,100); padding: 30px 40px;">Doochronos 0.3 Beta A de Doocode</h2>
+			<h2 style="font-weight: normal; color: white; background: rgb(255,0,100); padding: 30px 40px;">Doochronos 0.3 Beta B de Doocode</h2>
 			<p>Doochronos est un site web qui permet de gerer plusieurs minuteurs et chronomètres en même temps.</p>
 			<img src="res/img/licence-logo.png" id="licence" />
 			<p>Le projet Doochronos est un produit de <a href="http://doo.zz.vc/">Doocode</a> et est placé sous la licence GPL v.3 dont vous pouvez trouver plus d'informations à cette adresse : <a href="https://www.gnu.org/licenses/gpl.html">https://www.gnu.org/licenses/gpl.html [EN]</a>.</p>
