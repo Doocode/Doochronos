@@ -183,7 +183,7 @@ function Timer(n,h,m,s,a)
 	this.initialTime.update();
 	
 	// On prépare le code html pour l'affichage du temps sur une "carte"
-	var html = '<div class="card timer quickmenu" id="' + this.id + '"><center><img src="res/img/timer.png" /></center></div>';
+	var html = '<div class="card timer" id="' + this.id + '"><center><img src="res/img/timer.png" /></center></div>';
 	$(html).prependTo($('.listCards')); // On place le code de "html" dans ".listCards"
 	
 	// On ajoute cet item dans le tableau "listCards"
@@ -273,7 +273,7 @@ function Chrono(n,a)
     };
 	
 	// On prépare le code html pour l'affichage du temps sur une "carte"
-	var html = '<div class="card chrono quickmenu" id="' + this.id + '"><center><img src="res/img/chrono.png" /></center></div>';
+	var html = '<div class="card chrono" id="' + this.id + '"><center><img src="res/img/chrono.png" /></center></div>';
 	$(html).prependTo($('.listCards')); // On place le code de "html" dans ".listCards"
 	
 	// On ajoute cet item dans le tableau "listCards"
