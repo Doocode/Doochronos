@@ -168,8 +168,7 @@
 	top: 0px;
 	left: 0px;
 	margin: 0px;
-	background: rgb(50,50,50);
-	color: white;
+	background: rgb(235,235,235);
 	border-radius: 0px;
 }
 
@@ -184,6 +183,21 @@
 	font-size: 16px;
 	font-family: 'RobotoCondensed', trebuchet ms, tahoma, verdana, arial, serif;
 	color: black;
+	
+	transition-property: all;
+	transition-duration: .5s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .5s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: .5s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: .5s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: .5s;
 }
 
 .central .clock:hover *
@@ -217,26 +231,12 @@
 	font-family: 'RobotoLight', trebuchet ms, tahoma, verdana, arial, serif;
 }
 
-.clock .pub
-{
-	display: none;
-}
-
-.fullScreen h1
+.central .clock.fullScreen h1
 {
 	font-size: 100px;
 }
 
-.fullScreen p
+.central .clock.fullScreen p
 {
 	font-size: 18px;
-}
-
-.fullScreen .pub
-{
-	display: block;
-	padding-top: 15px;
-	margin-top: 15px;
-	border-top: 3px solid white;
-	font-size: 16px;
 }

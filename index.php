@@ -31,6 +31,7 @@
 	
 			<script src="res/js/classes.js"></script>
 			<script src="res/js/app.js"></script>
+			<script src="res/js/clock.js"></script>
 	
 		</div>
     </body>
