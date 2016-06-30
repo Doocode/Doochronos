@@ -28,3 +28,11 @@
 		<p>Convertir une durée</p>
 	</li>
 </ul>
+
+<div class="clock" onclick="showTime();">
+    <div class="full"></div>
+    <div class="ctn">
+        <h1>00:00</h1>
+        <p id="date">Lundi 1er Janvier 1917</p>
+    </div>
+</div>

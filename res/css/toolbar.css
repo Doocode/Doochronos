@@ -2,6 +2,8 @@
 
     Dans ce fichier CSS, il y a le css de
     - ToolBar
+    - Clock
+    - Clock.fullScreen
 
 */
 
@@ -126,4 +128,115 @@
 	display: none;
 	border-radius: 4px;
 	vertical-align: middle;
+}
+
+/* Clock */
+
+.clock
+{
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	
+	background: white;
+	box-shadow: 0px 3px 4px rgba(0,0,0,.5);
+	color: black;
+	margin: 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 0px;
+	display: block;
+	
+	transition-property: all;
+	transition-duration: .5s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .5s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: .5s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: .5s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: .5s;
+}
+
+.fullScreen
+{
+	top: 0px;
+	left: 0px;
+	margin: 0px;
+	background: rgb(235,235,235);
+	border-radius: 0px;
+}
+
+.clock:hover
+{
+	background: rgb(35,35,35);
+}
+
+.central .clock *
+{
+	margin: 0px;
+	font-size: 16px;
+	font-family: 'RobotoCondensed', trebuchet ms, tahoma, verdana, arial, serif;
+	color: black;
+	
+	transition-property: all;
+	transition-duration: .5s;
+	
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .5s;
+	
+	-moz-transition-property: all;
+	-moz-transition-duration: .5s;
+	
+	-o-transition-property: all;
+	-o-transition-duration: .5s;
+	
+	-ms-transition-property: all;
+	-ms-transition-duration: .5s;
+}
+
+.central .clock:hover *
+{
+	color: white;
+}
+
+.clock .ctn,
+.clock .full
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.clock .ctn
+{
+	padding: 10px 25px;
+	padding-top: 8px;
+}
+
+.clock .full
+{
+	height: 100%;
+}
+
+.central .clock h1
+{
+	font-weight: normal;
+	font-size: 32px;
+	margin: 0px;
+	font-family: 'RobotoLight', trebuchet ms, tahoma, verdana, arial, serif;
+}
+
+.central .clock.fullScreen h1
+{
+	font-size: 100px;
+}
+
+.central .clock.fullScreen p
+{
+	font-size: 18px;
 }
