@@ -138,14 +138,23 @@ function updateView() // Pour mettre à  jour l'affichage
 {
 	if($('.card').length == 0) // S'il n'y pas de carte à afficher
 	{
+		$('.toolBar .little').fadeOut(); // Cacher en fondu les petits boutons
 		$('.listCards').css('display','none'); // Cacher la liste des cartes
 		$('.welcome').fadeIn(); // Afficher en fondu le message d'accueil
 	}
 	else // S'il y a au moins une carte à afficher
 	{
+		$('.toolBar .little').fadeIn(); // Afficher en fondu les petits boutons
 		$('.listCards').fadeIn(); // Afficher en fondu la liste des cartes
 		$('.welcome').css('display','none'); // Cacher le message d'accueil
 	}
+}
+
+/* Fonctions pour une seul carte */
+
+function repriseTimer(idCard) // Pour mettre réactiver un minuteur/chrono
+{
+	listCards[parseInt(idCard)-1].reprise();
 }
 
 function pauseCard(idCard) // Pour mettre en pause une carte avec l'aide de son ID
@@ -164,7 +173,31 @@ function removeCard(idCard) // Pour supprimer une carte avec l'aide de son ID
 	updateView(); // Mise à jour de l'affichage
 }
 
-function repriseTimer(idCard) // Pour mettre réactiver un minuteur/chrono
+/* Fonctions pour plusieurs cartes */
+
+function repriseAllCards() // Pour réactiver tous les cartes
 {
-	listCards[parseInt(idCard)-1].reprise();
+    for(var i=1;i<=listCards.length;i++) // On va parcourir la liste des cartes
+    {
+        if(listCards[i-1].type() == 'timer' || listCards[i-1].type() == 'chrono') // S'il s'agit d'un chronomètre ou d'un minuteur
+            repriseTimer(i); // Relancer le processus de raffraichissement
+    }
+}
+
+function pauseAllCards() // Pour mettre en pause tous les cartes
+{
+    for(var i=1;i<=listCards.length;i++) // On va parcourir la liste des cartes
+    {
+        if(listCards[i-1].type() == 'timer' || listCards[i-1].type() == 'chrono') // S'il s'agit d'un chronomètre ou d'un minuteur
+            pauseCard(i); // Stopper le processus de raffraichissement
+    }
+}
+
+function removeAllCards() // Pour supprimer tous les cartes
+{
+    if(confirm('Voulez-vous vraiment tout supprimer ?'))
+    {
+        for(var i=1;i<=listCards.length;i++) // On va parcourir la liste des cartes
+            removeCard(i); // Supprimer chaque carte
+    }
 }

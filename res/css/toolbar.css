@@ -123,6 +123,21 @@
 		    filter: invert(0%);
 }
 
+.toolBar .little
+{
+    display: none;
+}
+
+.toolBar .little *
+{
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    transform: scale(0.85);
+    margin-right: 0px;
+}
+
 .toolBar p
 {
 	background: rgba(0,0,0,.8);
