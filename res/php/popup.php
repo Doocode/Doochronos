@@ -1,5 +1,7 @@
-<div id="popupNewTimer" class="popup">
-	<div class="hidePopup" onclick="showPopup('Timer');"></div>
+<!-- Les popups -->
+
+<div id="popupNewTimer" class="popup"> <!-- Popup pour créer un nouveau minuteur -->
+	<div class="hidePopup" onclick="showPopup('Timer');"></div> <!-- Le hide popup pour cacher le popup -->
 	<div class="form">
 		<h1>Nouveau minuteur</h1>
 		
@@ -34,8 +36,8 @@
 	</div>
 </div>
 
-<div id="popupNewChrono" class="popup">
-	<div class="hidePopup" onclick="showPopup('Chrono');"></div>
+<div id="popupNewChrono" class="popup"> <!-- Popup pour créer un nouveau chronomètre -->
+	<div class="hidePopup" onclick="showPopup('Chrono');"></div> <!-- Le hide popup pour cacher le popup -->
 	<div class="form">
 		<h1>Nouveau chronomètre</h1>
 		
@@ -50,8 +52,8 @@
 	</div>
 </div>
 
-<div id="popupNewCalcul" class="popup">
-	<div class="hidePopup" onclick="showPopup('Calcul');"></div>
+<div id="popupNewCalcul" class="popup"> <!-- Popup pour créer un nouveau calculateur de temps -->
+	<div class="hidePopup" onclick="showPopup('Calcul');"></div> <!-- Le hide popup pour cacher le popup -->
 	<div class="form">
 		<h1>Calculer le temps</h1>
 		<!--
@@ -64,8 +66,8 @@
 	</div>
 </div>
 
-<div id="popupNewConvert" class="popup">
-	<div class="hidePopup" onclick="showPopup('Convert');"></div>
+<div id="popupNewConvert" class="popup"> <!-- Popup pour créer un nouveau convertisseur de temps -->
+	<div class="hidePopup" onclick="showPopup('Convert');"></div> <!-- Le hide popup pour cacher le popup -->
 	<div class="form">
 		<h1>Convertir le temps</h1>
 		

@@ -1,72 +1,24 @@
-<!--header id="head">
-	<h1><a><img src="res/img/white-flat-logo-header.png" /></a></h1>
-	<ul>
-		<div>
-			<li>
-				<a href="index.php">
-					<span>Accueil</span>
-				</a>
-			</li>
-			<li id="configPage">
-				<a href="configuration.php#ttl">
-					<span>Configuration</span>
-				</a>
-			</li>
-			<li>
-				<a href="discover.php">
-					<span>Découvrir</span>
-				</a>
-			</li>
-			<li>
-				<a href="download.php">
-					<span>Télécharger</span>
-				</a>
-			</li>
-			<li>
-				<a href="contact.php">
-					<span>Contact</span>
-				</a>
-			</li>
-			<li>
-				<a href="about.php">
-					<span>A propos</span>
-				</a>
-			</li>
-		</div>
-		<li class="showNavig" onclick="showHeaderMenu();">
-			<span><img src="res/img/menu2.png" /></span>
-		</li>
-	</ul>
-</header-->
-
+<!-- HEADER -->
 <header id="head">
-	<div class="ctn">
+	<div class="ctn"> <!-- Contenu principal du header -->
 		<div>
-			<img class="btnMenu" onclick="showHeaderMenu();" src="res/img/menu2.png" />
-			<p><a href="index.php"><img src="res/img/white-flat-logo-header.png" /></a></p>
+            <!-- Partie aligné à gauche -->
+			<img class="btnMenu" onclick="showHeaderMenu();" src="res/img/menu2.png" /> <!-- Le bouton menu -->
+			<p><a href="index.php"><img src="res/img/white-flat-logo-header.png" /></a></p> <!-- Le logo du site -->
 		</div>
 		
-		<img class="btnFamily" onclick="showFamily();" src="res/img/menu.png" />
+		<img class="btnFamily" onclick="showFamily();" src="res/img/menu.png" /><!-- Le bouton Doocode Family -->
 	</div>
 	
+    <!-- Le menu de navigation du site -->
 	<ul>
 		<li>
 			<a href="index.php">
 				<span>Accueil</span>
 			</a>
 		</li>
-		<!--<li id="configPage">
-			<a href="configuration.php">
-				<span>Configuration</span>
-			</a>
-		</li>
 		<li>
-			<a href="discover.php">
-				<span>Découvrir</span>
-			</a>
-		</li>-->
-		<li>
-		<a href="download.php">
+		  <a href="download.php">
 				<span>Télécharger</span>
 			</a>
 		</li>
@@ -83,6 +35,7 @@
 	</ul>
 </header>
 
+<!-- Le menu Doocode Family -->
 <nav class="family">
 	<ul>
 		<h1>Doocode Family</h1>
@@ -113,6 +66,7 @@
 	</ul>
 </nav>
 
+<!-- Importation des scripts JS utilisé dans tous les pages du sites -->
 <script src="res/js/jquery-2.2.1.min.js"></script>
 <script src="res/js/header.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>

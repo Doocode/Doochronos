@@ -1,5 +1,5 @@
 
-<! L'écran d'accueil -->
+<!-- L'écran d'accueil -->
 <div class="welcome">
 	<img src="res/img/white-flat-logo.png" style="height:100px;" />
 	<h1>Bienvenue</h1>
@@ -7,10 +7,8 @@
 	<input type="button" onclick="showMenu(true);" value="Afficher le menu"/>
 </div>
 
-<!-- L'écran où sera placé les "cartes" -->
-<div class="listCards">
-</div>
+<div class="listCards"></div> <!-- L'écran où sera placé les "cartes" -->
 
-<?php include("res/php/toolbar.php"); ?>
+<?php include("res/php/toolbar.php"); ?> <!-- La barre d'outils -->
 
-<?php include("res/php/popup.php"); ?>
+<?php include("res/php/popup.php"); ?> <!-- Les popups -->

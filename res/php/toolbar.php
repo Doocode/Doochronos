@@ -1,6 +1,8 @@
 <!-- Les boutons de la barre d'outils en bas de l'écran -->
 <ul class="toolBar">
 	<li onclick="showMenu(true);" onmouseover="showTooltip('Afficher le menu');" onmouseout="showTooltip('');"><img src="res/img/add.png" /></li>
+    
+    <!-- Le span suivant sera rétréci de 20%, donc il aura une taille de 80% par rapport à sa taille précédente -->
 	<span style="display: inline-block; -webkit-transform: scale(0.8); -moz-transform: scale(0.8); -ms-transform: scale(0.8); -o-transform: scale(0.8); transform: scale(0.85);">
 		<li onclick="" onmouseover="showTooltip('Lancer tout les minuteurs et chronomètre');" onmouseout="showTooltip('');"><img src="res/img/reprise.png" /></li>
 		<li onclick="" onmouseover="showTooltip('Mettre en pause tout les minuteurs et chronomètre');" onmouseout="showTooltip('');"><img src="res/img/pause.png" /></li>
@@ -29,10 +31,11 @@
 	</li>
 </ul>
 
+<!-- Le "clock" : L'horloge affiché en bas de l'écran -->
 <div class="clock" onclick="showTime();">
-    <div class="full"></div>
-    <div class="ctn">
-        <h1>00:00</h1>
-        <p id="date">Lundi 1er Janvier 1917</p>
+    <div class="full"></div> <!-- Une div qui prendra tout la hauteur du clock -->
+    <div class="ctn"> <!-- Le contenu va s'aligner au milieu verticalement grace au .full dééclaré précédement déclaré -->
+        <h1>00:00</h1> <!-- L'heure -->
+        <p id="date">Lundi 1er Janvier 1917</p> <!-- La date -->
     </div>
 </div>
