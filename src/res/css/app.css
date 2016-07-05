@@ -126,7 +126,6 @@ input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[t
 {
 	display: inline-block;
 	vertical-align: middle;
-	width: 250px;
 	height: 300px;
 	width: 300px;
 	padding: 20px;
@@ -155,25 +154,17 @@ input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[t
 	-ms-transition-property: all;
 	-ms-transition-duration: .25s;
 }
-/*
-.listCards .card:hover
+
+.listCards .card.expanded
 {
-	border-color: white;
+	width: 670px;
 }
 
-.listCards .card:active
+.listCards .card .ctn
 {
-	-webkit-transform: scale(.9);
-	-moz-transform: scale(.9);
-	-ms-transform: scale(.9);
-	-o-transform: scale(.9);
-	transform: scale(.9);
-}*/
-/*
-.finished
-{
-	background: rgb(50,50,60);
-}*/
+	height: 300px;
+	width: 300px;
+}
 
 .finished::before,
 .paused::before
@@ -321,7 +312,8 @@ input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[t
 	-ms-transition-duration: .5s;
 }
 
-.listCards .card:hover .listActs
+.listCards .card:hover .listActs,
+.listCards .card.expanded .listActs
 {
 	opacity: 1;
 	top: 0px;
@@ -331,6 +323,13 @@ input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[t
 	-ms-transform: scale(1);
 	-o-transform: scale(1);
 	transform: scale(1);
+}
+
+.listCards .card.expanded .listActs
+{
+	left: 355px;
+    width: 355px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
 
 .listCards .card .listActs li
@@ -352,7 +351,8 @@ input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[t
 	display: none;
 }
 
-.listCards .card .listActs li:active
+.listCards .card .listActs li:active,
+.listCards .card .listActs li.checked
 {
 	background: #000;
 	color: white;
@@ -375,7 +375,8 @@ input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[t
 		    filter: invert(100%);
 }
 
-.listCards .card .listActs li:hover img
+.listCards .card .listActs li:hover img,
+.listCards .card .listActs li.checked img
 {
 	-webkit-filter: invert(0%);
 	   -moz-filter: invert(0%);

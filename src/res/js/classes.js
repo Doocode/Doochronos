@@ -169,6 +169,7 @@ function Timer(n,h,m,s,a)
 	this.initialTime = new Time(h,m,s);
 	this.elapsedTime = new Time(0,0,0);
     this.alarm = a;
+    this.isExpanded = false;
     this.id = cardId;
 	this.interval;
 	
@@ -224,7 +225,11 @@ function Timer(n,h,m,s,a)
 	// La fonction updateText sert à mettre à jour l'affichage de la "carte" du minuteur
 	this.updateText = function()
 	{
-		var html = '<h1>' + this.remainingTime.toString() + '</h1><h4>' + this.name + '</h4><table><tr><th>Temps initial</th><th>Durée écoulé</th></tr><tr><td>' + this.initialTime.toString() + '</td><td>' + this.elapsedTime.toString() + ' </td></tr></table><ul class="listActs"><li class="pause" onclick="pauseCard(' + this.id + '); "><img src="res/img/pause.png" /><p>Pause</p></li><li class="reprise" onclick="repriseTimer(' + this.id + ');"><img src="res/img/reprise.png" /><p>Reprendre</p></li><li class="edit"><img src="res/img/config-icon.png" /><p>Modifier</p></li><li onclick="removeCard(' + this.id + ');"><img src="res/img/close.png" /><p>Supprimer</p></li></ul>';
+        checkExpand = ''; // C'est pour cocher ou non l'action Agrandir
+        if(this.isExpanded) // Si la carte est agrandie, alors faire cocher l'action Agrandir
+            checkExpand = 'checked';
+        
+		var html = '<div class="ctn"><h1>' + this.remainingTime.toString() + '</h1><h4>' + this.name + '</h4><table><tr><th>Temps initial</th><th>Durée écoulé</th></tr><tr><td>' + this.initialTime.toString() + '</td><td>' + this.elapsedTime.toString() + ' </td></tr></table></div><ul class="listActs"><li class="pause" onclick="pauseCard(' + this.id + '); "><img src="res/img/pause.png" /><p>Pause</p></li><li class="reprise" onclick="repriseTimer(' + this.id + ');"><img src="res/img/reprise.png" /><p>Reprendre</p></li><li class="edit"><img src="res/img/config-icon.png" /><p>Modifier</p></li><li class="expand ' + checkExpand + '" onclick="expandCard(' + this.id + ');"><img src="res/img/expand.png" /><p>Agrandir</p></li><li onclick="removeCard(' + this.id + ');"><img src="res/img/close.png" /><p>Supprimer</p></li></ul>';
 		$('#'+this.id).html(html);
     };
 	
@@ -241,6 +246,23 @@ function Timer(n,h,m,s,a)
 		$('#'+this.id+' .pause').css('display','none');
 		$('#'+this.id+' .reprise').css('display','block');
 		clearInterval(this.interval);
+	};
+	
+    // La fonction expand permet d'agrandir/rétrecir la carte
+	this.expand = function()
+	{
+        if(this.isExpanded)
+        {
+            $('#'+this.id).removeClass('expanded');
+            $('#'+this.id+' .expand').removeClass('checked');
+        }
+        else
+        {
+            $('#'+this.id).addClass('expanded');
+            $('#'+this.id+' .listActs .expand').addClass('checked');
+        }
+        
+		this.isExpanded = !this.isExpanded;
 	};
 	
     // La fonction reprise permet de réactiver la carte si elle est en pause
@@ -263,6 +285,7 @@ function Chrono(n,a)
     this.name = n;
 	this.elapsedTime = new Time(0,0,0);
     this.alarm = a;
+    this.isExpanded = false;
     this.id = cardId;
 	this.interval;
 	
@@ -316,10 +339,31 @@ function Chrono(n,a)
 		this.startChrono();
 	};
 	
+    // La fonction expand permet d'agrandir/rétrecir la carte
+	this.expand = function()
+	{
+        if(this.isExpanded)
+        {
+            $('#'+this.id).removeClass('expanded');
+            $('#'+this.id+' .expand').removeClass('checked');
+        }
+        else
+        {
+            $('#'+this.id).addClass('expanded');
+            $('#'+this.id+' .listActs .expand').addClass('checked');
+        }
+        
+		this.isExpanded = !this.isExpanded;
+	};
+	
 	// La fonction updateText sert à  mettre à  jour l'affichage de la "carte" du chrono
 	this.updateText = function()
 	{
-		var html = '<h1>' + this.elapsedTime.toString() + '</h1><h4>' + this.name + '</h4><ul class="listActs"><li class="pause" onclick="pauseCard(' + this.id + '); "><img src="res/img/pause.png" /><p>Pause</p></li><li class="reprise" onclick="repriseTimer(' + this.id + ');"><img src="res/img/reprise.png" /><p>Reprendre</p></li><li class="edit"><img src="res/img/config-icon.png" /><p>Modifier</p></li><li onclick="removeCard(' + this.id + ');"><img src="res/img/close.png" /><p>Supprimer</p></li></ul>';
+		checkExpand = ''; // C'est pour cocher ou non l'action Agrandir
+        if(this.isExpanded) // Si la carte est agrandie, alors faire cocher l'action Agrandir
+            checkExpand = 'checked';
+        
+		var html = '<div class="ctn"><h1>' + this.elapsedTime.toString() + '</h1><h4>' + this.name + '</h4></div><ul class="listActs"><li class="pause" onclick="pauseCard(' + this.id + '); "><img src="res/img/pause.png" /><p>Pause</p></li><li class="reprise" onclick="repriseTimer(' + this.id + ');"><img src="res/img/reprise.png" /><p>Reprendre</p></li><li class="edit"><img src="res/img/config-icon.png" /><p>Modifier</p></li><li class="expand ' + checkExpand + '" onclick="expandCard(' + this.id + ');"><img src="res/img/expand.png" /><p>Agrandir</p></li><li onclick="removeCard(' + this.id + ');"><img src="res/img/close.png" /><p>Supprimer</p></li></ul>';
 		$('#'+this.id).html(html);
     };
 }
@@ -333,6 +377,7 @@ function Convert(mill,c,y,months,w,d,h,m,s)
 	// On affecte les valeurs
 	this.initialTime = new TimePlus(mill,c,y,months,w,d,h,m,s);
 	this.timeConverted = new TimePlus(mill,c,y,months,w,d,h,m,s);
+    this.isExpanded = false;
     this.id = cardId;
 	
 	// La fonction type sert à définir le type de l'objet
@@ -363,10 +408,31 @@ function Convert(mill,c,y,months,w,d,h,m,s)
 		$('#'+this.id).css('background',listColors[i]);
     };
 	
+    // La fonction expand permet d'agrandir/rétrecir la carte
+	this.expand = function()
+	{
+        if(this.isExpanded)
+        {
+            $('#'+this.id).removeClass('expanded');
+            $('#'+this.id+' .expand').removeClass('checked');
+        }
+        else
+        {
+            $('#'+this.id).addClass('expanded');
+            $('#'+this.id+' .listActs .expand').addClass('checked');
+        }
+        
+		this.isExpanded = !this.isExpanded;
+	};
+	
 	// La fonction updateText sert à  mettre à  jour l'affichage de la "carte" du convertisseur
 	this.updateText = function()
 	{
-		var html = '<table><tr><th>Millénaires</th><th>Siècles</th><th>Années</th></tr><tr><td>' + this.timeConverted.millennials + '</td><td>' + this.timeConverted.centuries + '</td><td>' + this.timeConverted.years + '</td></tr><tr><th>Mois</th><th>Semaines</th><th>Jours</th></tr><tr><td>' + this.timeConverted.months + '</td><td>' + this.timeConverted.weeks + '</td><td>' + this.timeConverted.days + '</td></tr><tr><th>Heures</th><th>Minutes</th><th>Secondes</th></tr><tr><td>' + this.timeConverted.hours + '</td><td>' + this.timeConverted.minutes + '</td><td>' + this.timeConverted.seconds + '</td></tr><tr><th colspan="3" class="lastRow">Temps initial</th></tr><tr><td colspan="3">' + this.initialTime.toString() + '</td></tr></table><ul class="listActs"><li class="edit"><img src="res/img/config-icon.png" /><p>Modifier</p></li><li onclick="removeCard(' + this.id + ');"><img src="res/img/close.png" /><p>Supprimer</p></li></ul>';
+		checkExpand = ''; // C'est pour cocher ou non l'action Agrandir
+        if(this.isExpanded) // Si la carte est agrandie, alors faire cocher l'action Agrandir
+            checkExpand = 'checked';
+        
+		var html = '<div class="ctn"><table><tr><th>Millénaires</th><th>Siècles</th><th>Années</th></tr><tr><td>' + this.timeConverted.millennials + '</td><td>' + this.timeConverted.centuries + '</td><td>' + this.timeConverted.years + '</td></tr><tr><th>Mois</th><th>Semaines</th><th>Jours</th></tr><tr><td>' + this.timeConverted.months + '</td><td>' + this.timeConverted.weeks + '</td><td>' + this.timeConverted.days + '</td></tr><tr><th>Heures</th><th>Minutes</th><th>Secondes</th></tr><tr><td>' + this.timeConverted.hours + '</td><td>' + this.timeConverted.minutes + '</td><td>' + this.timeConverted.seconds + '</td></tr><tr><th colspan="3" class="lastRow">Temps initial</th></tr><tr><td colspan="3">' + this.initialTime.toString() + '</td></tr></table></div><ul class="listActs"><li class="edit"><img src="res/img/config-icon.png" /><p>Modifier</p></li><li class="expand ' + checkExpand + '" onclick="expandCard(' + this.id + ');"><img src="res/img/expand.png" /><p>Agrandir</p></li><li onclick="removeCard(' + this.id + ');"><img src="res/img/close.png" /><p>Supprimer</p></li></ul>';
 		$('#'+this.id).html(html);
     };
 }

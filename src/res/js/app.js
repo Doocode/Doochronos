@@ -162,6 +162,11 @@ function pauseCard(idCard) // Pour mettre en pause une carte avec l'aide de son 
 	listCards[parseInt(idCard)-1].pause(); // On cherche dans listCards la carte et on le met en pause
 }
 
+function expandCard(idCard) // Pour agrandir/rétrecir une carte avec l'aide de son ID
+{
+	listCards[parseInt(idCard)-1].expand(); // On cherche dans listCards la carte et on l'agrandit ou rétrecit
+}
+
 function removeCard(idCard) // Pour supprimer une carte avec l'aide de son ID
 {
 	if(listCards[parseInt(idCard)-1].type() == 'timer' || listCards[parseInt(idCard)-1].type() == 'chrono') // S'il s'agit d'un chronomètre ou d'un minuteur
@@ -191,6 +196,12 @@ function pauseAllCards() // Pour mettre en pause tous les cartes
         if(listCards[i-1].type() == 'timer' || listCards[i-1].type() == 'chrono') // S'il s'agit d'un chronomètre ou d'un minuteur
             pauseCard(i); // Stopper le processus de raffraichissement
     }
+}
+
+function expandAllCards() // Pour agrandir/rétrecir tous les cartes
+{
+    for(var i=1;i<=listCards.length;i++) // On va parcourir la liste des cartes
+        expandCard(i); // Agrandit/rétrecit chaque carte
 }
 
 function removeAllCards() // Pour supprimer tous les cartes

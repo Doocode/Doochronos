@@ -11,8 +11,8 @@
 	
         <span style="width: 20px; display: inline-block;"></span> <!-- Espacement de 20px -->
         
+		<li onclick="expandAllCards();" onmouseover="showTooltip('Agrandir/rétrécir tous les cartes');" onmouseout="showTooltip('');"><img src="res/img/expand.png" /></li>
         <li onclick="removeAllCards();" onmouseover="showTooltip('Supprimer tous les cartes');" onmouseout="showTooltip('');"><img src="res/img/close.png" /></li>
-		<li style="display: none;" onclick="expandAllCards();" onmouseover="showTooltip('Agrandir/rétrécir tous les cartes');" onmouseout="showTooltip('');"><img src="res/img/expand.png" /></li>
 	</span>
 
 	<p class="tooltip">Tooltip</p> <!-- La bulle d'info, celle qui est affiché au survol d'un bouton de la barre d'outils -->
