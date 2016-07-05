@@ -31,7 +31,7 @@
 
 *
 {
-	font-family: segoe ui, ubuntu, trebuchet ms, arial, serif;
+	font-family: 'RobotoRegular', segoe ui, ubuntu, trebuchet ms, arial, serif;
 }
 
 body
@@ -63,6 +63,7 @@ body
 	margin-top: 30px;
 	background: white;
 	box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+    border-radius: 10px;
 }
 
 .page h1

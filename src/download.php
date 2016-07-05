@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="res/css/main.css" />
         <link rel="stylesheet" href="res/css/header.css" />
         <link rel="stylesheet" href="res/css/index.css" />
+        <link rel="stylesheet" href="res/css/presentation.css" />
 		<link rel="icon" type="image/png" href="res/img/favicon.png" />
         <title>Doochronos > Télécharger</title>
     </head>
@@ -14,9 +15,12 @@
     <body>
         <?php include("res/php/header.php"); ?>
 		
-		<div class="page">
+		<div class="presentation" style="background-image: url(res/img/download.png);">
 			<h1>Télécharger Doochronos</h1>
-			<img id="pub" src="res/img/download.png" />
+		</div>
+		
+		<div class="page">
+			<h1>Télécharger Doochronos 0.2 Beta B</h1>
 			<p>Tout d'abord, pour télécharger Doochronos, il faut savoir plusieurs choses :</p>
 			<ul>
 				<li>le fichier que vous allez télécharger n'est pas un programme, mais une archive ZIP contenant du code source<!--, par conséquent, il est destiné aux développeurs et/ou webmaster par exemple-->;</li>

@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="res/css/main.css" />
         <link rel="stylesheet" href="res/css/header.css" />
         <link rel="stylesheet" href="res/css/index.css" />
+        <link rel="stylesheet" href="res/css/presentation.css" />
         <link rel="stylesheet" href="res/css/contact.css" />
 		<link rel="icon" type="image/png" href="res/img/favicon.png" />
         <title>Doochronos > Nous contacter</title>
@@ -15,11 +16,13 @@
     <body>
         <?php include("res/php/header.php"); ?>
 		
-		<div class="page">
+		<div class="presentation" style="background-image: url(res/img/contact.png);">
 			<h1>Nous contacter</h1>
-			<img id="pub" src="res/img/contact.png" />
+		</div>
+		
+		<div class="page">
 			
-			<h2 style="font-family: 'Roboto', trebuchet ms, tahoma, verdana, arial, serif; font-weight: normal;">Envoyer un message</h2>
+			<h1>Envoyer un message</h1>
 			<?php
 				if(!isset($_POST['subject']) AND !isset($_POST['content']))
 				{

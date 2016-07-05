@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="res/css/main.css" />
         <link rel="stylesheet" href="res/css/header.css" />
         <link rel="stylesheet" href="res/css/index.css" />
+        <link rel="stylesheet" href="res/css/presentation.css" />
         <link rel="stylesheet" href="res/css/about.css" />
 		<link rel="icon" type="image/png" href="res/img/favicon.png" />
         <title>Doochronos > A propos</title>
@@ -15,9 +16,12 @@
     <body>
         <?php include("res/php/header.php"); ?>
 		
-		<div class="page">
+		<div class="presentation" style="background-image: url(res/img/about.png);">
 			<h1>A propos de Doochronos</h1>
-			<img id="pub" src="res/img/ident.png" />
+		</div>
+		
+		<div class="page">
+			<img id="pub" src="res/img/ident.png" style="margin-top: -50px; border-radius: 10px 10px 0px 0px;" />
 			<h2 style="font-weight: normal; color: white; background: rgb(255,0,100); padding: 30px 40px;">Doochronos 0.3 Beta B de Doocode</h2>
 			<p>Doochronos est un site web qui permet de gérer plusieurs minuteurs et chronomètres en même temps.</p>
 			<img src="res/img/licence-logo.png" id="licence" />
