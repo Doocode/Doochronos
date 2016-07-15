@@ -20,7 +20,7 @@
 		</div>
 		
 		<div class="page">
-			<h1>Télécharger Doochronos 0.2 Beta B</h1>
+			<h1>Télécharger Doochronos 0.3 Beta B</h1>
 			<p>Tout d'abord, pour télécharger Doochronos, il faut savoir plusieurs choses :</p>
 			<ul>
 				<li>le fichier que vous allez télécharger n'est pas un programme, mais une archive ZIP contenant du code source<!--, par conséquent, il est destiné aux développeurs et/ou webmaster par exemple-->;</li>
@@ -28,7 +28,8 @@
 			</ul>
 			
 			<input type="submit" value="Lire la licence GPL v3 (en anglais)" onclick="window.open('http://www.gnu.org/licenses/gpl.html', '_blank');" />
-			<input type="submit" value="Télécharger Doochronos" onclick="document.location.href='res/doochronos_0_3_beta_a_src.zip'" />
+			<input type="submit" value="Télécharger Doochronos" onclick="window.open('res/doochronos_0_3_beta_b_src.zip', '_blank');" />
+			<input type="submit" value="GitHub de Doochronos" onclick="window.open('https://github.com/Doocode/Doochronos/', '_blank');" />
 		</div>
     </body>
 </html>
