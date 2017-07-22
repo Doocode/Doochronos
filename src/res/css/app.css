@@ -46,7 +46,6 @@ header .ctn img
 }
 
 .central .aligner,
-.central .redirect,
 .central .app
 {
 	display: inline-block;
@@ -55,7 +54,6 @@ header .ctn img
 
 .central .app
 {
-	display: none;
     width: 100%;
 }
 

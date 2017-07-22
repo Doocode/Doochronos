@@ -14,17 +14,13 @@
 		<title>Doochronos de Doocode</title>
     </head>
 
-    <body onload="loadFinished();">
+    <body>
         <?php include("res/php/header.php"); ?> <!-- L'entête -->
 		
 		<div class="central">
 		
 			<div class="aligner"></div> <!-- "aligner" sert de repère pour aligner "redirect" et "app" verticalement -->
 			
-			<div class="redirect">
-				<h1>Veuillez patienter</h1> <!-- "redirect" sert à faire patienter l'utilisateur le temps du chargement de la page -->
-			</div>
-            
 			<div class="app">
 				<?php include("res/php/app.php"); ?> <!-- C'est ici le coeur de Doochronos -->
 			</div>

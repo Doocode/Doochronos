@@ -30,16 +30,6 @@ $('body').mousemove(function(e) // Si la souris se déplace sur la page
 	return true; // Pour le scroll ait un effet
 });
 
-function loadFinished() // Cette fonction est appelé au chargement de la page
-{
-	$('body').css('background','rgb(255,0,100)'); // Changer le fond
-	$('.redirect').css('display','none'); // Cacher le message de chargement
-	$('.app,.app .toolBar').css('display','inline-block'); // Afficher la barre d'outils
-	$('.app .toolBar').addClass('animated slideInUp'); // // Animer l'apparition de la barre d'outils
-	
-	updateTime(); // Lancer "l'horloge"
-}
-
 function showMenu(showRequested) // Pour afficher ou cacher le menu
 {
 	if(showRequested) // Si l'utilisateur veut afficher le menu
