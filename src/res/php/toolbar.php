@@ -37,12 +37,3 @@
 		<p>Convertir une durée</p>
 	</li>
 </ul>
-
-<!-- Le "clock" : L'horloge affiché en bas de l'écran -->
-<div class="clock" onclick="showTime();">
-    <div class="full"></div> <!-- Une div qui prendra tout la hauteur du clock -->
-    <div class="ctn"> <!-- Le contenu va s'aligner au milieu verticalement grace au .full dééclaré précédement déclaré -->
-        <h1>00:00</h1> <!-- L'heure -->
-        <p id="date">Lundi 1er Janvier 1917</p> <!-- La date -->
-    </div>
-</div>
