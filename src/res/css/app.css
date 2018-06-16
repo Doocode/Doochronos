@@ -5,29 +5,13 @@ body
 	background-size: cover;
     background-attachment: fixed;
 	background-position: center center;
-}
-
-header
-{
-    background: rgb(50,50,50);
-    box-shadow: 0px 0px 10px rgba(0,0,0,.5);
-    
-    background: #fff;
-}
-
-header .ctn img
-{
-	-webkit-filter: invert(85%);
-	   -moz-filter: invert(85%);
-		-ms-filter: invert(85%);
-		 -o-filter: invert(85%);
-		    filter: invert(85%);
+    padding-top: 45px;
 }
 
 .central
 {
 	position: fixed;
-	top: 70px;
+	top: 45px;
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
@@ -36,8 +20,10 @@ header .ctn img
 	color: white;
 	text-align: center;
     font-size: 0px;
-    z-index: -10;
+    pointer-events: none;
 }
+
+.central * {pointer-events: all;}
 
 .central .aligner
 {
@@ -67,13 +53,12 @@ header .ctn img
 	font-weight: normal;
 	font-size: 28px;
 	color: white;
-	font-family: 'RobotoLight', trebuchet ms, tahoma, verdana, arial, serif;
+	font-family: 'RobotoLight','RobotoRegular',  trebuchet ms, tahoma, verdana, arial, serif;
 }
 
 .central p
 {
-	font-size: 20px;
-	font-family: 'RobotoLight', trebuchet ms, tahoma, verdana, arial, serif;
+	font-size: 14px;
 	max-width: 700px;
 	line-height: 30px;
     margin: 20px auto;
@@ -81,43 +66,46 @@ header .ctn img
 
 input[type=submit],input[type=reset],input[type=image],input[type=button],button
 {
-	border: 3px solid white;
+	border: 2px solid white;
 	background: white;
-	border-radius: 4px;
-	padding: 10px 15px;
+	padding: 8px 25px;
 	min-width: 150px;
-	color: rgb(255,0,100);
-	font-size: 16px;
 	margin: 5px;
-	font-family: 'RobotoRegular', segoe ui, trebuchet ms, tahoma, verdana, arial, serif;
-	cursor: pointer;
-	
-	-webkit-transition: all .2s ease;
-       -moz-transition: all .2s ease;
-        -ms-transition: all .2s ease;
-         -o-transition: all .2s ease;
-            transition: all .2s ease;
+    text-transform: uppercase;
+    border-radius: 50px;
+    color: rgb(50,50,50);
 }
 
 input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[type=button]:hover,button:hover
 {
 	background: transparent;
 	color: white;
-	border: 3px solid white;
+	border: 2px solid white;
 }
 
+/* Ecran d'introduction */
+.welcome img
+{
+    width: 60px;
+}
+
+.welcome h1
+{
+	font-family: 'MontserratRegular','RobotoRegular', segoe ui, trebuchet ms, tahoma, verdana, arial, serif;
+    font-size: 28px;
+    width: 400px;
+    margin: 25px auto;
+}
+
+/* Liste des cartes */
 .listCards
 {
 	overflow: hidden;
 	overflow-x: hidden;
 	font-size: 0px;
-	padding: 25px;
+	padding: 0 30px;
 	display: none;
-	
-	/*position: fixed;
-	left: 0px;
-	right: 0px;
-	bottom: 120px;*/
+    text-align: center;
 }
 
 .listCards .card
@@ -127,13 +115,13 @@ input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[t
 	height: 300px;
 	width: 300px;
 	padding: 20px;
-	background: rgb(50,50,60);
-	/*border: 5px solid transparent;*/
-	border-radius: 7px;
-	box-shadow: 0px 3px 5px rgba(0,0,0,.5);
+	background: rgb(35,35,35);
+	border-radius: 5px;
+    box-shadow: 10px 10px 0 rgba(0,0,0,.2);
 	margin: 15px;
 	text-align: left;
 	cursor: default;
+    color: #fff;
 	overflow: hidden;
 	position: relative;
 	
@@ -169,7 +157,6 @@ input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[t
 {
 	content: "Terminé";
 	background: rgba(0,0,0,.9);
-	box-shadow: 0px 3px 5px black inset;
 	text-shadow: 0px 0px 10px black;
 	font-family: 'Roboto', trebuchet ms, tahoma, verdana, arial, serif;
 	font-size: 20px;
@@ -327,14 +314,14 @@ input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[t
 {
 	left: 355px;
     width: 355px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
 
 .listCards .card .listActs li
 {
-	padding: 5px 20px;
+	padding: 10px 20px;
 	color: black;
 	cursor: pointer;
+    font-size: 0;
 }
 
 .listCards .card .listActs li:hover
@@ -387,4 +374,5 @@ input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[t
 {
 	font-size: 14px;
 	margin-left: 10px;
+    font-family: 'MontserratRegular','RobotoRegular', segoe ui, trebuchet ms, tahoma, verdana, arial, serif;
 }

@@ -6,8 +6,7 @@
         <link rel="stylesheet" href="res/css/animate.css" />
         <link rel="stylesheet" href="res/css/main.css" />
         <link rel="stylesheet" href="res/css/header.css" />
-        <link rel="stylesheet" href="res/css/index.css" />
-        <link rel="stylesheet" href="res/css/presentation.css" />
+        <link rel="stylesheet" href="res/css/page.css" />
         <link rel="stylesheet" href="res/css/about.css" />
 		<link rel="icon" type="image/png" href="res/img/favicon.png" />
         <title>Doochronos > A propos</title>
@@ -22,10 +21,11 @@
 		
 		<div class="page">
 			<img id="pub" src="res/img/ident.png" style="margin-top: -50px; border-radius: 10px 10px 0px 0px;" />
-			<h2 style="font-weight: normal; color: white; background: rgb(255,0,100); padding: 30px 40px;">Doochronos 0.3 Beta B de Doocode</h2>
+			<h1>A propos de Doochronos</h1>
+            <h2 id="version">Version 0.3 Beta C</h2>
 			<p>Doochronos est un site web qui permet de gérer plusieurs minuteurs et chronomètres en même temps.</p>
 			<img src="res/img/licence-logo.png" id="licence" />
-			<p>Le projet Doochronos est un produit de <a href="http://doo.zz.vc/">Doocode</a> et est placé sous la licence GPL v.3 dont vous pouvez trouver plus d'informations à cette adresse : <a href="https://www.gnu.org/licenses/gpl.html">https://www.gnu.org/licenses/gpl.html [EN]</a>.</p>
+			<p>Le site Doochronos est un projet de <a href="http://doo.zz.vc/">Doocode</a> et est placé sous la licence GPL v.3 dont vous pouvez trouver plus d'informations à cette adresse : <a href="https://www.gnu.org/licenses/gpl.html">https://www.gnu.org/licenses/gpl.html [EN]</a>.</p>
 			<img src="res/img/web-tech.png" id="webtech" />
 			<p>Le site de Doochronos est codé en HTML 5, CSS 3, PHP, JavaScript et jQuery, et utilise également un projet intitulé <a href="http://daneden.github.io/animate.css/">Animate.css</a> créé par Daniel Eden, placé sous licence MIT.</p>
 		</div>

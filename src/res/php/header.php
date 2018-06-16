@@ -3,11 +3,17 @@
 	<div class="ctn"> <!-- Contenu principal du header -->
 		<div>
             <!-- Partie aligné à gauche -->
-			<img class="btnMenu" onclick="showHeaderMenu();" src="res/img/menu2.png" /> <!-- Le bouton menu -->
+			<img class="btnMenu" onclick="showHeaderMenu();" src="res/img/menu.png" /> <!-- Le bouton menu -->
 			<p><a href="index.php"><img src="res/img/white-flat-logo-header.png" /></a></p> <!-- Le logo du site -->
+            
+            <nav>
+                <ul class="tabs">
+                    <li></li>
+                </ul>
+            </nav>
 		</div>
 		
-		<img class="btnFamily" onclick="showFamily();" src="res/img/menu.png" /><!-- Le bouton Doocode Family -->
+		<img class="btnFamily" onclick="showFamily();" src="res/img/family.png" /><!-- Le bouton Doocode Family -->
 	</div>
 	
     <!-- Le menu de navigation du site -->

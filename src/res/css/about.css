@@ -1,3 +1,16 @@
+#version
+{
+    font-weight: normal;
+    color: white;
+    background: rgb(200,0,100);
+    padding: 10px 20px;
+    font-size: 16px;
+    box-shadow: 0 2px 3px silver;
+    font-family: 'MontserratRegular','RobotoRegular', segoe ui, trebuchet ms, tahoma, verdana, arial, serif;
+    display: inline-block;
+    margin-top: -10px;
+}
+
 #licence,
 #webtech
 {
@@ -6,22 +19,14 @@
 	margin-top: 30px;
 }
 
-#licence
-{
-	height: 100px;
-}
-
-#webtech
-{
-	height: 150px;
-}
+#licence {max-height: 70px;}
+#webtech {max-height: 100px;}
 
 @media screen and (max-width: 1000px)
 {
 	#licence,
 	#webtech
 	{
-		height: inherit;
-		width: 100%;
+		max-width: 100%;
 	}
 }

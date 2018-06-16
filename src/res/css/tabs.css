@@ -1,0 +1,47 @@
+.tabs
+{
+}
+
+
+/* TabBar */
+.tabs .tabBar
+{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.tabs .tabBar input[type=radio]
+{
+	display: none;
+}
+
+.tabs .tabBar input[type="radio"] + label
+{
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 5px 15px;
+    margin: 0 5px;
+    font-size: 12px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.tabs .tabBar input[type="radio"] + label:hover,
+.tabs .tabBar input[type="radio"]:checked + label
+{
+    background: #fff;
+    color: #000;
+}
+
+
+/* TabContainer */
+.tabs .tab
+{
+    display: none;
+}
+
+.tabs .tab:first-child
+{
+    display: block;
+}

@@ -15,7 +15,7 @@ var listColors = ['rgb(255,100,0)', 'rgb(85,170,0)', 'rgb(0,120,200)', 'rgb(150,
 
 $('html').click(function(e) // Lorsqu'on clique sur la page
 {
-	if($('.menu').css('width')=='350px') // Si le menu est visible
+	if($('.menu').css('left')=='0px') // Si le menu est visible
 		showMenu(false); // Cacher le menu
 	
 	return true; // Pour que le clic ait un effet
@@ -34,11 +34,11 @@ function showMenu(showRequested) // Pour afficher ou cacher le menu
 {
 	if(showRequested) // Si l'utilisateur veut afficher le menu
 	{
-		$('.menu').css('width','350px');
+		$('.menu').css('left','0px');
 	}
 	else // Si l'utilisateur veut fermer le menu
 	{
-		$('.menu').css('width','0px');
+		$('.menu').css('left','-400px');
 	}
 }
 

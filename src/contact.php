@@ -6,8 +6,7 @@
         <link rel="stylesheet" href="res/css/animate.css" />
         <link rel="stylesheet" href="res/css/main.css" />
         <link rel="stylesheet" href="res/css/header.css" />
-        <link rel="stylesheet" href="res/css/index.css" />
-        <link rel="stylesheet" href="res/css/presentation.css" />
+        <link rel="stylesheet" href="res/css/page.css" />
         <link rel="stylesheet" href="res/css/contact.css" />
 		<link rel="icon" type="image/png" href="res/img/favicon.png" />
         <title>Doochronos > Nous contacter</title>

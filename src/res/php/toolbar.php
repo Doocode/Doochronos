@@ -30,7 +30,7 @@
 	</li>
 	<li onclick="showPopup('Calcul');">
 		<img src="res/img/passe.png" />
-		<p>Calculer le temps passé ou restant</p>
+		<p>Déterminer le temps passé ou restant</p>
 	</li>
 	<li onclick="showPopup('Convert');">
 		<img src="res/img/convert.png" />

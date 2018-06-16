@@ -6,8 +6,7 @@
         <link rel="stylesheet" href="res/css/animate.css" />
         <link rel="stylesheet" href="res/css/main.css" />
         <link rel="stylesheet" href="res/css/header.css" />
-        <link rel="stylesheet" href="res/css/index.css" />
-        <link rel="stylesheet" href="res/css/presentation.css" />
+        <link rel="stylesheet" href="res/css/page.css" />
 		<link rel="icon" type="image/png" href="res/img/favicon.png" />
         <title>Doochronos > Télécharger</title>
     </head>
@@ -20,7 +19,7 @@
 		</div>
 		
 		<div class="page">
-			<h1>Télécharger Doochronos 0.3 Beta B</h1>
+			<h1>Télécharger Doochronos 0.3 Beta C</h1>
 			<p>Tout d'abord, pour télécharger Doochronos, il faut savoir plusieurs choses :</p>
 			<ul>
 				<li>le fichier que vous allez télécharger n'est pas un programme, mais une archive ZIP contenant du code source<!--, par conséquent, il est destiné aux développeurs et/ou webmaster par exemple-->;</li>

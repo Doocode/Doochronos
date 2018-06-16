@@ -1,6 +1,6 @@
 label
 {
-	min-width: 200px;
+	min-width: 150px;
 	margin-right: 15px;
 	display: inline-block;
 }
@@ -12,7 +12,7 @@ input[type=text],input[type=password],textarea
 	background: transparent;
 	padding: 10px 0px;
 	color: black;
-	font-size: 16px;
+	font-size: 14px;
 	margin: 5px 0px;
 	width: 300px;
 	font-family: 'RobotoRegular', segoe ui, trebuchet ms, tahoma, verdana, arial, serif;
