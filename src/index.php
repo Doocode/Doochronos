@@ -32,7 +32,11 @@
 		</div>
 	
         <!-- Importation de quelques scripts JS -->
-        <script src="res/js/classes.js"></script>
+        <script src="res/js/time.js"></script>
+        <script src="res/js/timeplus.js"></script>
+        <script src="res/js/timer.js"></script>
+        <script src="res/js/chrono.js"></script>
+        <script src="res/js/convert.js"></script>
         <script src="res/js/app.js"></script>
     </body>
 </html>
