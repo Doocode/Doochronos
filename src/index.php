@@ -2,41 +2,53 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="res/css/animate.css" />
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
+        <meta name="keywords" content="doocode, doochronos" />
+		<meta name="description" content="Doochronos est un site web qui permet de gérer plusieurs minuteurs et chronomètres en même temps." />
+		<link rel="stylesheet" href="res/css/animate.css" />
         <link rel="stylesheet" href="res/css/main.css" />
         <link rel="stylesheet" href="res/css/header.css" />
-        <link rel="stylesheet" href="res/css/app-header.css" />
-        <link rel="stylesheet" href="res/css/app.css" />
-        <link rel="stylesheet" href="res/css/toolbar.css" />
-        <link rel="stylesheet" href="res/css/tabs.css" />
-        <link rel="stylesheet" href="res/css/popup.css" />
+        <link rel="stylesheet" href="res/css/page.css" />
+        <link rel="stylesheet" href="res/css/index.css" />
 		<link rel="icon" type="image/png" href="res/img/favicon.png" />
-		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
-		<meta name="keywords" content="doocode, doochronos" />
-		<title>Doochronos de Doocode</title>
+        <title>Doochronos de Doocode</title>
     </head>
 
-    <body id="app">
-        <?php include("res/php/header.php"); ?> <!-- L'entête -->
-
-        <div class="listCards"></div> <!-- L'écran où sera placé les "cartes" -->
+    <body>
+        <?php include("res/php/header.php"); ?>
 		
-		<div class="central">
-		
-			<div class="aligner"></div> <!-- "aligner" sert de repère pour aligner "redirect" et "app" verticalement -->
-			
-			<div class="app">
-				<?php include("res/php/app.php"); ?> <!-- C'est ici le coeur de Doochronos -->
-			</div>
-	
+		<div class="presentation" style="background-image: url(res/img/about.png);">
+			<h1>Accueil</h1>
 		</div>
-	
-        <!-- Importation de quelques scripts JS -->
-        <script src="res/js/time.js"></script>
-        <script src="res/js/timeplus.js"></script>
-        <script src="res/js/timer.js"></script>
-        <script src="res/js/chrono.js"></script>
-        <script src="res/js/convert.js"></script>
-        <script src="res/js/app.js"></script>
+		
+		<div class="page">
+            <h1>Bienvenue sur Doochronos</h1>
+            <ul id="actions">
+                <li id="btnStart">
+                    <a href="board.php">
+                        <img src="res/img/start.png" />
+                        <p>Utiliser Doochronos</p>
+                    </a>
+                </li>
+                <li id="btnConfig">
+                    <a href="configuration.php">
+                        <img src="res/img/config.png" />
+                        <p>Configurer Doochronos</p>
+                    </a>
+                </li>
+                <li id="btnLogin">
+                    <a href="#">
+                        <img src="res/img/user.png" />
+                        <p>S'inscrire ou se connecter</p>
+                    </a>
+                </li>
+            </ul>
+            
+            <h2>Qu'est-ce que Doochronos</h2>
+            <p>Doochronos est un site web qui permet de gérer plusieurs minuteurs et chronomètres en même temps.</p>
+            
+            <h2>Français et Open-source</h2>
+            <p>Doochronos a été développé par des Français et est hébergé par un hébergeur français. Vous pouvez même voir les entrailles du site, si vous avez des capacités en développement puisque le site est open-source.</p>
+		</div>
     </body>
 </html>

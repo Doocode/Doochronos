@@ -24,6 +24,11 @@
 			</a>
 		</li>
 		<li>
+			<a href="board.php">
+				<span>Tableau de bord</span>
+			</a>
+		</li>
+		<li>
 		  <a href="download.php">
 				<span>Télécharger</span>
 			</a>
