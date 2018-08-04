@@ -16,7 +16,7 @@
         <?php include("res/php/header.php"); ?>
 		
 		<div class="presentation" style="background-image: url(res/img/about.png);">
-			<h1>A propos de Doochronos</h1>
+			<h1>A propos</h1>
 		</div>
 		
 		<div class="page">

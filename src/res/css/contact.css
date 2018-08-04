@@ -15,7 +15,6 @@ input[type=text],input[type=password],textarea
 	font-size: 14px;
 	margin: 5px 0px;
 	width: 300px;
-	font-family: 'RobotoRegular', segoe ui, trebuchet ms, tahoma, verdana, arial, serif;
 	
 	-webkit-transition: all .3s ease;
        -moz-transition: all .3s ease;
@@ -66,7 +65,6 @@ label[for=text]
 
 	label
 	{
-		font-family: 'RobotoCondensed', segoe ui, trebuchet ms, tahoma, verdana, arial, serif;
 		text-transform: uppercase;
 		color: rgb(255,0,100);
 	}

@@ -15,7 +15,7 @@
         <?php include("res/php/header.php"); ?>
 		
 		<div class="presentation" style="background-image: url(res/img/download.png);">
-			<h1>Télécharger Doochronos</h1>
+			<h1>Télécharger</h1>
 		</div>
 		
 		<div class="page">

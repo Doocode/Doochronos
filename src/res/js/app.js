@@ -59,7 +59,7 @@ function showTooltip(text) // Pour afficher les bulles d'infos
 		$('.toolBar p').css('display','none'); // Ne pas afficher la bulle d'info
 	else // Si le texte à afficher n'est pas vide
 	{
-		$('.toolBar p').css('display','inline-block'); // Afficher la bulle
+		$('.toolBar p').css('display','inline'); // Afficher la bulle
 		$('.toolBar p').html(text); // Remplacer le texte par le message demandé
 	}
 }
