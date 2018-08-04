@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
-        <link rel="stylesheet" href="res/css/animate.css" />
-        <link rel="stylesheet" href="res/css/main.css" />
-        <link rel="stylesheet" href="res/css/header.css" />
+        <?php include("res/php/head.php"); ?>
         <link rel="stylesheet" href="res/css/page.css" />
         <link rel="stylesheet" href="res/css/contact.css" />
-		<link rel="icon" type="image/png" href="res/img/favicon.png" />
         <title>Doochronos > Nous contacter</title>
     </head>
 
@@ -60,7 +55,7 @@
 					mail($to, $subject, $message, $headers);
 					
 					?>
-					<p>Votre a bien été envoyé, merci beaucoup de votre attention.</p>
+					<p>Votre message a bien été envoyé, merci beaucoup de votre attention.</p>
 					<?php
 				}
 			?>

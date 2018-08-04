@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="res/css/animate.css" />
-        <link rel="stylesheet" href="res/css/main.css" />
-        <link rel="stylesheet" href="res/css/header.css" />
-        <link rel="stylesheet" href="res/css/app-header.css" />
-        <link rel="stylesheet" href="res/css/app.css" />
+        <?php include("res/php/head.php"); ?>
+        <link rel="stylesheet" href="res/css/hub-header.css" />
+        <link rel="stylesheet" href="res/css/hub.css" />
+        <link rel="stylesheet" href="res/css/list-cards.css" />
         <link rel="stylesheet" href="res/css/toolbar.css" />
         <link rel="stylesheet" href="res/css/tabs.css" />
         <link rel="stylesheet" href="res/css/popup.css" />
-		<link rel="icon" type="image/png" href="res/img/favicon.png" />
-		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
-		<meta name="keywords" content="doocode, doochronos" />
 		<title>Doochronos > Tableau de bord</title>
     </head>
 
@@ -27,10 +22,26 @@
 			<div class="aligner"></div> <!-- "aligner" sert de repère pour aligner "redirect" et "app" verticalement -->
 			
 			<div class="app">
-				<?php include("res/php/app.php"); ?> <!-- C'est ici le coeur de Doochronos -->
+                
+                <!-- L'écran d'accueil -->
+                <div class="welcome">
+                    <img src="res/img/white-flat-logo.png" />
+                    <h1>Manipuler le temps est devenu possible</h1>
+                    <input type="button" onclick="showMenu(true);" value="Commencer"/>
+                </div>
+
 			</div>
 	
 		</div>
+        
+        <?php include("res/php/toolbar.php"); ?> <!-- La barre d'outils -->
+        <?php include("res/php/menu.php"); ?> <!-- Le menu -->
+
+        <!-- Les popups -->
+        <?php include("res/php/timer.php"); ?>
+        <?php include("res/php/chrono.php"); ?>
+        <?php include("res/php/calc.php"); ?>
+        <?php include("res/php/convert.php"); ?>
 	
         <!-- Importation de quelques scripts JS -->
         <script src="res/js/time.js"></script>
@@ -39,5 +50,6 @@
         <script src="res/js/chrono.js"></script>
         <script src="res/js/convert.js"></script>
         <script src="res/js/app.js"></script>
+        <script src="res/js/new-cards.js"></script>
     </body>
 </html>

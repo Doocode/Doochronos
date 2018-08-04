@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
+        <?php include("res/php/head.php"); ?>
         <meta name="keywords" content="doocode, doochronos" />
 		<meta name="description" content="Doochronos est un site web qui permet de gérer plusieurs minuteurs et chronomètres en même temps." />
-		<link rel="stylesheet" href="res/css/animate.css" />
-        <link rel="stylesheet" href="res/css/main.css" />
-        <link rel="stylesheet" href="res/css/header.css" />
         <link rel="stylesheet" href="res/css/page.css" />
         <link rel="stylesheet" href="res/css/index.css" />
-		<link rel="icon" type="image/png" href="res/img/favicon.png" />
         <title>Doochronos de Doocode</title>
     </head>
 

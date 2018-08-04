@@ -90,11 +90,18 @@
 	margin: 16px;
 }
 
+.menu li p
+{
+	font-size: 14px;
+    color: #fff;
+}
+
 /* Popup */
 
 .popup
 {
 	display: none;
+    color: #fff;
 }
 
 .hidePopup
@@ -164,7 +171,6 @@
 
 #popupNewChrono .form {background: rgb(255,100,0);}
 #popupNewCalcul .form {background: rgb(0,120,200);}
-#popupNewCalcul  {display: block;}
 #popupNewConvert .form {background: rgb(255,0,100);}
 
 .popup .form h1
@@ -230,7 +236,6 @@
 
 .popup .form .numbers .cell
 {
-	background: red;
 	display: inline-block;
 	width: 28%;
 	margin-right: 1%;
