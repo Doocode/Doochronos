@@ -14,6 +14,7 @@
 
     <body>
         <?php include("res/php/header.php"); ?>
+        <script>setCurrentPage('#aboutPage');</script>
 		
 		<div class="presentation" style="background-image: url(res/img/about.png);">
 			<h1>A propos</h1>

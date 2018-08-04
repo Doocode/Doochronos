@@ -8,7 +8,7 @@
         <span class="right"> <!-- Partie aligné à droite -->
             <span id="hubPages">
                 <a id="boardPage" href="board.php"><img src="res/img/home.png" /></a>
-                <a id="configPage" href="configuration.php"><img src="res/img/config.png" /></a>
+                <a id="configPage" href="configuration.php"><img src="res/img/config-icon.png" /></a>
             </span>
             <img class="btnFamily" onclick="showFamily();" src="res/img/family.png" /><!-- Le bouton Doocode Family -->
         </span>
@@ -16,22 +16,22 @@
 	
     <!-- Le menu de navigation du site -->
 	<ul>
-		<li>
+		<li id="indexPage">
 			<a href="index.php">
 				<span>Accueil</span>
 			</a>
 		</li>
-		<li>
+		<li id="downloadPage">
 		  <a href="download.php">
 				<span>Télécharger</span>
 			</a>
 		</li>
-		<li>
+		<li id="contactPage">
 			<a href="contact.php">
 				<span>Contact</span>
 			</a>
 		</li>
-		<li>
+		<li id="aboutPage">
 			<a href="about.php">
 				<span>A propos</span>
 			</a>

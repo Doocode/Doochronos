@@ -13,6 +13,8 @@
 var listCards = [], cardId = 0; // listCards sert à retenir les cartes créés; cardId sert a obtenir un identifiant pour une nouvelle carte
 var listColors = ['rgb(255,100,0)', 'rgb(85,170,0)', 'rgb(0,120,200)', 'rgb(150,0,100)']; // Une liste de couleurs par défaut pour les cartes crée
 
+$('#configPage').hide();
+
 $('html').click(function(e) // Lorsqu'on clique sur la page
 {
 	if($('.menu').css('left')=='0px') // Si le menu est visible

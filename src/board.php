@@ -18,6 +18,7 @@
 
     <body id="app">
         <?php include("res/php/header.php"); ?> <!-- L'entête -->
+        <script>setCurrentPage('#boardPage');</script>
 
         <div class="listCards"></div> <!-- L'écran où sera placé les "cartes" -->
 		
