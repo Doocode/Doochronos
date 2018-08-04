@@ -1,19 +1,17 @@
-<!-- HEADER -->
 <header id="head">
 	<div class="ctn"> <!-- Contenu principal du header -->
-		<div>
-            <!-- Partie aligné à gauche -->
+		<div> <!-- Partie aligné à gauche -->
 			<img class="btnMenu" onclick="showHeaderMenu();" src="res/img/menu.png" /> <!-- Le bouton menu -->
 			<p><a href="index.php"><img src="res/img/white-flat-logo-header.png" /></a></p> <!-- Le logo du site -->
-            
-            <nav>
-                <ul class="tabs">
-                    <li></li>
-                </ul>
-            </nav>
 		</div>
 		
-		<img class="btnFamily" onclick="showFamily();" src="res/img/family.png" /><!-- Le bouton Doocode Family -->
+        <span class="right"> <!-- Partie aligné à droite -->
+            <span id="hubPages">
+                <a id="boardPage" href="board.php"><img src="res/img/home.png" /></a>
+                <a id="configPage" href="configuration.php"><img src="res/img/config.png" /></a>
+            </span>
+            <img class="btnFamily" onclick="showFamily();" src="res/img/family.png" /><!-- Le bouton Doocode Family -->
+        </span>
 	</div>
 	
     <!-- Le menu de navigation du site -->
@@ -21,11 +19,6 @@
 		<li>
 			<a href="index.php">
 				<span>Accueil</span>
-			</a>
-		</li>
-		<li>
-			<a href="board.php">
-				<span>Tableau de bord</span>
 			</a>
 		</li>
 		<li>
