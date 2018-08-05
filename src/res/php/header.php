@@ -73,5 +73,4 @@
 <!-- Importation des scripts JS utilisé dans tous les pages du sites -->
 <script src="res/js/jquery-2.2.1.min.js"></script>
 <script src="res/js/header.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
+<script src="res/js/jquery.scrollTo.min.js"></script>
