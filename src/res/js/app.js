@@ -10,7 +10,7 @@
 // Ce fichier contient les fonctions principales nécéssaire au fonctionnement de Doochronos (la page d'accueil uniquement)
 
 // On initialise les variables
-var listCards = [], cardId = 0; // listCards sert à retenir les cartes créés; cardId sert a obtenir un identifiant pour une nouvelle carte
+var listCards = [], cardId = -1; // listCards sert à retenir les cartes créés; cardId sert a obtenir un identifiant pour une nouvelle carte
 var listColors = ['rgb(255,100,0)', 'rgb(85,170,0)', 'rgb(0,120,200)', 'rgb(150,0,100)']; // Une liste de couleurs par défaut pour les cartes crée
 
 $('#configPage').hide();
@@ -96,22 +96,22 @@ function updateView() // Pour mettre à  jour l'affichage
 
 function repriseTimer(idCard) // Pour mettre réactiver un minuteur/chrono
 {
-	listCards[parseInt(idCard)-1].reprise();
+	listCards[parseInt(idCard)].reprise();
 }
 
 function pauseCard(idCard) // Pour mettre en pause une carte avec l'aide de son ID
 {
-	listCards[parseInt(idCard)-1].pause(); // On cherche dans listCards la carte et on le met en pause
+	listCards[parseInt(idCard)].pause(); // On cherche dans listCards la carte et on le met en pause
 }
 
 function expandCard(idCard) // Pour agrandir/rétrecir une carte avec l'aide de son ID
 {
-	listCards[parseInt(idCard)-1].expand(); // On cherche dans listCards la carte et on l'agrandit ou rétrecit
+	listCards[parseInt(idCard)].expand(); // On cherche dans listCards la carte et on l'agrandit ou rétrecit
 }
 
 function removeCard(idCard) // Pour supprimer une carte avec l'aide de son ID
 {
-	if(listCards[parseInt(idCard)-1].type() == 'timer' || listCards[parseInt(idCard)-1].type() == 'chrono') // S'il s'agit d'un chronomètre ou d'un minuteur
+	if(listCards[parseInt(idCard)].type == 'timer' || listCards[parseInt(idCard)].type == 'chrono') // S'il s'agit d'un chronomètre ou d'un minuteur
 	{
 		pauseCard(idCard); // Stopper le processus de raffraichissement
 	}
@@ -124,25 +124,25 @@ function removeCard(idCard) // Pour supprimer une carte avec l'aide de son ID
 
 function repriseAllCards() // Pour réactiver tous les cartes
 {
-    for(var i=1;i<=listCards.length;i++) // On va parcourir la liste des cartes
+    for(let i=0;i<listCards.length;i++) // On va parcourir la liste des cartes
     {
-        if(listCards[i-1].type() == 'timer' || listCards[i-1].type() == 'chrono') // S'il s'agit d'un chronomètre ou d'un minuteur
+        if(listCards[i].type == 'timer' || listCards[i].type == 'chrono') // S'il s'agit d'un chronomètre ou d'un minuteur
             repriseTimer(i); // Relancer le processus de raffraichissement
     }
 }
 
 function pauseAllCards() // Pour mettre en pause tous les cartes
 {
-    for(var i=1;i<=listCards.length;i++) // On va parcourir la liste des cartes
+    for(let i=0;i<listCards.length;i++) // On va parcourir la liste des cartes
     {
-        if(listCards[i-1].type() == 'timer' || listCards[i-1].type() == 'chrono') // S'il s'agit d'un chronomètre ou d'un minuteur
+        if(listCards[i].type == 'timer' || listCards[i].type == 'chrono') // S'il s'agit d'un chronomètre ou d'un minuteur
             pauseCard(i); // Stopper le processus de raffraichissement
     }
 }
 
 function expandAllCards() // Pour agrandir/rétrecir tous les cartes
 {
-    for(var i=1;i<=listCards.length;i++) // On va parcourir la liste des cartes
+    for(let i=0;i<listCards.length;i++) // On va parcourir la liste des cartes
         expandCard(i); // Agrandit/rétrecit chaque carte
 }
 
@@ -150,7 +150,7 @@ function removeAllCards() // Pour supprimer tous les cartes
 {
     if(confirm('Voulez-vous vraiment tout supprimer ?'))
     {
-        for(var i=1;i<=listCards.length;i++) // On va parcourir la liste des cartes
+        for(let i=0;i<listCards.length;i++) // On va parcourir la liste des cartes
             removeCard(i); // Supprimer chaque carte
     }
 }

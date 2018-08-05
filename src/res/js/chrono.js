@@ -1,29 +1,22 @@
 // Définition de l'objet Chrono
 function Chrono(n,a)
-{
-	// On incrémente "cardId" pour créer un identifiant pour cet objet
-	cardId++;
-	
-	// On affecte les valeurs
+{	
+	// On affecte les attributs
     this.name = n;
+	this.type = 'chrono';
+    this.card = new Card(this.name, this.type); // On génère une carte
+    this.id = this.card.id;
 	this.elapsedTime = new Time(0,0,0);
     this.alarm = a;
     this.isExpanded = false;
-    this.id = cardId;
 	this.interval;
 	
-	// La fonction type sert à définir le type de l'objet
-	this.type = function()
-	{
-		return 'chrono';
-    };
-	
-	// On prépare le code html pour l'affichage du temps sur une "carte"
-	var html = '<div class="card chrono" id="' + this.id + '"><center><img src="res/img/chrono.png" /></center></div>';
-	$(html).prependTo($('.listCards')); // On place le code de "html" dans ".listCards"
-	
-	// On ajoute cet item dans le tableau "listCards"
-	listCards.push(this);
+    // On remplit la carte
+    let icon = $('<img/>');
+    icon.attr('src','res/img/chrono.png');
+    this.card.object.append($('<center/>').append(icon));
+
+	listCards.push(this); // On ajoute cet item dans le tableau "listCards"
 	
 	// Cette fonction sert à lancer le chrono et à le mettre à jour tout les 1 secondes
 	this.startChrono = function()
@@ -37,7 +30,7 @@ function Chrono(n,a)
 			this.updateText();
 
 			// On choisi une couleur dans le tableau pour faire genre le compteur est allumé
-			var i = this.id-1;
+			var i = this.id;
 			while(i>=4)
 				i -= 4;
 			$('#'+this.id).css('background',listColors[i]);

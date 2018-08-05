@@ -1,25 +1,20 @@
 // Définition de l'objet Convert
 function Convert(mill,c,y,months,w,d,h,m,s)
 {
-	// On incrémente "cardId" pour créer un identifiant pour cet objet
-	cardId++;
-	
-	// On affecte les valeurs
-	this.initialTime = new TimePlus(mill,c,y,months,w,d,h,m,s);
+	// On affecte les attributs
+    this.name = '';
+	this.type = 'convert';
+    this.card = new Card(this.name, this.type); // On génère une carte
+    this.id = this.card.id;
+    this.initialTime = new TimePlus(mill,c,y,months,w,d,h,m,s);
 	this.timeConverted = new TimePlus(mill,c,y,months,w,d,h,m,s);
     this.isExpanded = false;
-    this.id = cardId;
 	
-	// La fonction type sert à définir le type de l'objet
-	this.type = function()
-	{
-		return 'convert';
-    };
-	
-	// On prépare le code html pour l'affichage du temps sur une "carte"
-	var html = '<div class="card convert" id="' + this.id + '"><center><img src="res/img/convert.png" /></center></div>';
-	$(html).prependTo($('.listCards')); // On place le code de "html" dans ".listCards"
-	
+    // On remplit la carte
+    let icon = $('<img/>');
+    icon.attr('src','res/img/convert.png');
+    this.card.object.append($('<center/>').append(icon));
+
 	// On ajoute cet item dans le tableau "listCards"
 	listCards.push(this);
 	
@@ -32,7 +27,7 @@ function Convert(mill,c,y,months,w,d,h,m,s)
 		this.updateText();
 	
 		// On choisi une couleur dans le tableau pour faire genre le compteur est allumé
-		var i = this.id-1;
+		var i = this.id;
 		while(i>=4)
 			i -= 4;
 		$('#'+this.id).css('background',listColors[i]);

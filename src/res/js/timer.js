@@ -1,32 +1,26 @@
 // Définition de l'objet Timer (pour le minuteur)
 function Timer(n,h,m,s,a)
 {
-	// On incrémente "cardId" pour créer un identifiant pour cet objet
-	cardId++;
-	
-	// On affecte les valeurs
+	// On affecte les attributs
     this.name = n;
-	this.remainingTime = new Time(h,m,s);
+	this.type = 'timer';
+    this.card = new Card(this.name, this.type); // On génère une carte
+    this.id = this.card.id;
+    this.remainingTime = new Time(h,m,s);
 	this.initialTime = new Time(h,m,s);
 	this.elapsedTime = new Time(0,0,0);
     this.alarm = a;
     this.isExpanded = false;
-    this.id = cardId;
 	this.interval;
 	
-	// La fonction type sert à définir le type de l'objet
-	this.type = function()
-	{
-		return 'timer';
-    };
+    // On remplit la carte
+    let icon = $('<img/>');
+    icon.attr('src','res/img/timer.png');
+    this.card.object.append($('<center/>').append(icon));
 	
 	// On remet le temps en place pour éviter d'avoir un cadran du genre "00:135:2048" (h:m:s)
 	this.remainingTime.update();
 	this.initialTime.update();
-	
-	// On prépare le code html pour l'affichage du temps sur une "carte"
-	var html = '<div class="card timer" id="' + this.id + '"><center><img src="res/img/timer.png" /></center></div>';
-	$(html).prependTo($('.listCards')); // On place le code de "html" dans ".listCards"
 	
 	// On ajoute cet item dans le tableau "listCards"
 	listCards.push(this);
@@ -47,7 +41,7 @@ function Timer(n,h,m,s,a)
 				this.updateText();
 	
 				// On choisi une couleur dans le tableau pour faire genre le compteur est allumé
-				var i = this.id-1;
+				var i = this.id;
 				while(i>=4)
 					i -= 4;
 				$('#'+this.id).css('background',listColors[i]);
