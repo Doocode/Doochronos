@@ -1,26 +1,28 @@
 /* Liste des cartes */
 .listCards
 {
-	overflow: hidden;
-	overflow-x: hidden;
 	font-size: 0px;
 	padding: 0 30px;
 	display: none;
     text-align: center;
 }
 
+.listCards .card,
+.listCards .card .ctn
+{
+	height: 250px;
+	width: 250px;
+}
+
 .listCards .card
 {
 	display: inline-block;
 	vertical-align: middle;
-	height: 300px;
-	width: 300px;
 	padding: 20px;
 	background: rgb(35,35,35);
 	border-radius: 5px;
-    box-shadow: 10px 10px 0 rgba(0,0,0,.2);
+    box-shadow: 0 3px 10px rgba(0,0,0,.3);
 	margin: 15px;
-	text-align: left;
 	cursor: default;
     color: #fff;
 	overflow: hidden;
@@ -44,23 +46,17 @@
 
 .listCards .card.expanded
 {
-	width: 670px;
-}
-
-.listCards .card .ctn
-{
-	height: 300px;
-	width: 300px;
+	width: 570px;
 }
 
 .finished::before,
 .paused::before
 {
 	content: "Terminé";
-	background: rgba(0,0,0,.9);
-	text-shadow: 0px 0px 10px black;
+	background: rgba(0,0,0,.3);
 	font-size: 20px;
 	text-transform: uppercase;
+    text-align: left;
 	padding: 20px;
 	display: block;
 	
@@ -84,14 +80,14 @@
 
 .listCards .card center img
 {
-	margin: 125px 0px;
+	margin: 100px 0px;
 	max-height: 50px;
 	max-width: 50px;
 }
 
 .listCards .card h5
 {
-    font-size: 40px;
+    font-size: 35px;
     font-weight: normal;
 }
 
@@ -104,6 +100,16 @@
 .listCards .card th
 {
 	font-weight: normal;
+    font-size: 16px;
+}
+
+.listCards .timer h4 {margin-top: 50px;}
+.listCards .chrono h4 {margin-top: 95px;}
+
+.listCards .card th
+{
+	text-transform: uppercase;
+    font-size: 12px;
 }
 
 .listCards .card table
@@ -114,12 +120,14 @@
 
 .listCards .timer table
 {
-	margin-top: 160px;
+    margin-top: 60px;
+    border-top: 2px solid #fff;
+    padding-top: 20px;
 }
 
 .listCards .card td
 {
-	font-size: 27px;
+	font-size: 22px;
 	margin-top: -5px;
 }
 
@@ -133,7 +141,6 @@
 	width: 100%;
 	height: 100%;
     font-size: 0;
-    text-align: center;
 }
 
 .listCards .convert .numbers .number
@@ -144,7 +151,6 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
     margin-bottom: 20px;
-    margin-top: 15px;
 }
 
 .listCards .convert .numbers .number p
@@ -161,8 +167,8 @@
 
 .listCards .convert h4
 {
-    text-align: center;
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 .listCards .card .listActs
@@ -171,6 +177,7 @@
 	overflow: hidden;
 	list-style: none;
 	padding: 10px 0px;
+    text-align: left;
 	margin: 0px;
 	opacity: 0;
 	
@@ -217,8 +224,8 @@
 
 .listCards .card.expanded .listActs
 {
-	left: 355px;
-    width: 355px;
+	left: 305px;
+    width: 305px;
 }
 
 .listCards .card .listActs li

@@ -5,7 +5,9 @@ body
 	background-size: cover;
     background-attachment: fixed;
 	background-position: center center;
-    padding-top: 45px;
+    margin: 0;
+    padding-top: 48px;
+    padding-bottom: 84px;
 }
 
 .central

@@ -83,8 +83,8 @@ function Convert(n,mill,c,y,months,w,d,h,m,s)
         // Remplissage de la carte
         let card = this.card;
         let div = $('<div/>');
-        div.append(numbers);
         div.append($('<h4/>').html(this.name));
+        div.append(numbers);
         card.setContent(div);
     };
 }
