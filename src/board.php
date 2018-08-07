@@ -49,6 +49,7 @@
         <script src="res/js/timer.js"></script>
         <script src="res/js/chrono.js"></script>
         <script src="res/js/convert.js"></script>
+        <script src="res/js/action.js"></script>
         <script src="res/js/app.js"></script>
         <script src="res/js/cards.js"></script>
         <script src="res/js/add-cards.js"></script>
