@@ -23,15 +23,6 @@ $('html').click(function(e) // Lorsqu'on clique sur la page
 	return true; // Pour que le clic ait un effet
 });
 
-$('body').mousemove(function(e) // Si la souris se déplace sur la page
-{
-	var percent = ((e.pageX / parseInt($('body').css('width').split("px").join("")))*100); // On récupère la position du curseur et on calcul sa position en % sur l'axe X
-	var percentString = '' + percent + '%'; // On le met en chaine de caractère et on ajoute le caractère "%"
-	$('.listCards').scrollTo(percentString,0); // On scroll vers la position (percentString,0px)
-	
-	return true; // Pour le scroll ait un effet
-});
-
 function showMenu(showRequested) // Pour afficher ou cacher le menu
 {
 	if(showRequested) // Si l'utilisateur veut afficher le menu

@@ -73,4 +73,3 @@
 <!-- Importation des scripts JS utilisé dans tous les pages du sites -->
 <script src="res/js/jquery-2.2.1.min.js"></script>
 <script src="res/js/header.js"></script>
-<script src="res/js/jquery.scrollTo.min.js"></script>
