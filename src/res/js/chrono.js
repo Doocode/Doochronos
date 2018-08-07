@@ -14,7 +14,24 @@ function Chrono(n,a)
     // On remplit la carte
     let icon = $('<img/>');
     icon.attr('src','res/img/chrono.png');
-    this.card.object.append($('<center/>').append(icon));
+    this.card.setContent($('<center/>').append(icon));
+        
+    // Ajout des actions du menu
+    let id = this.id;
+    let actPause   = new Action('Pause','res/img/pause.png');
+    let actReprise = new Action('Reprise','res/img/reprise.png');
+    let actEdit    = new Action('Modifier','res/img/config-icon.png');
+    let actExpand  = new Action('Agrandir','res/img/expand.png');
+    let actRemove  = new Action('Supprimer','res/img/close.png');
+    actPause.setFunction(function(){pauseCard(id);});
+    actReprise.setFunction(function(){repriseTimer(id);});
+    actExpand.setFunction(function(){expandCard(id);});
+    actRemove.setFunction(function(){removeCard(id);});
+    this.card.addAction(actPause,   'pause');
+    this.card.addAction(actReprise, 'reprise');
+    this.card.addAction(actEdit,    'edit');
+    this.card.addAction(actExpand,  'expand');
+    this.card.addAction(actRemove,  '');
 
 	listCards.push(this); // On ajoute cet item dans le tableau "listCards"
 	
@@ -74,12 +91,15 @@ function Chrono(n,a)
 	
 	// La fonction updateText sert à  mettre à  jour l'affichage de la "carte" du chrono
 	this.updateText = function()
-	{
-		checkExpand = ''; // C'est pour cocher ou non l'action Agrandir
-        if(this.isExpanded) // Si la carte est agrandie, alors faire cocher l'action Agrandir
-            checkExpand = 'checked';
+	{        
+        // Mise à jour de l'affichage
+        let name = $('<h4/>');
+        let time = $('<h5/>');
+        let div = $('<div/>');
+        name.html(this.name);
+        time.html(this.elapsedTime.toString());
+        div.append(name).append(time);
+        this.card.setContent(div);
         
-		var html = '<div class="ctn"><h1>' + this.elapsedTime.toString() + '</h1><h4>' + this.name + '</h4></div><ul class="listActs"><li class="pause" onclick="pauseCard(' + this.id + '); "><img src="res/img/pause.png" /><p>Pause</p></li><li class="reprise" onclick="repriseTimer(' + this.id + ');"><img src="res/img/reprise.png" /><p>Reprendre</p></li><li class="edit"><img src="res/img/config-icon.png" /><p>Modifier</p></li><li class="expand ' + checkExpand + '" onclick="expandCard(' + this.id + ');"><img src="res/img/expand.png" /><p>Agrandir</p></li><li onclick="removeCard(' + this.id + ');"><img src="res/img/close.png" /><p>Supprimer</p></li></ul>';
-		$('#'+this.id).html(html);
     };
 }

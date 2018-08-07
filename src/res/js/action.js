@@ -13,7 +13,7 @@ Action.prototype = {
         else
             console.log('[Erreur] L\'action "'+this.text+'" ne possède pas de fonction à activer.');
     },
-    // Cette fonction sert à changer la fonction
+    // Cette fonction sert à définir la fonction à activer
     setFunction : function(arg){
         this.function = arg;
         

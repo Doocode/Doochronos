@@ -82,11 +82,6 @@
 	margin: 0px;
 }
 
-.listCards .card .contener
-{
-	background: lime;
-}
-
 .listCards .card center img
 {
 	margin: 125px 0px;
@@ -99,6 +94,12 @@
 	font-size: 45px;
 	margin-top: -10px;
 	font-weight: normal;
+}
+
+.listCards .card h5
+{
+    font-size: 40px;
+    font-weight: normal;
 }
 
 .listCards .convert p
