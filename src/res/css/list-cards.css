@@ -78,9 +78,27 @@
 	margin: 0px;
 }
 
+.listCards .card .content
+{
+	width: 250px;
+	height: 250px;
+}
+
+.listCards .card .content .align,
+.listCards .card .content .ctn
+{
+	height: initial;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.listCards .card .content .align
+{
+	height: 100%;
+}
+
 .listCards .card center img
 {
-	margin: 100px 0px;
 	max-height: 50px;
 	max-width: 50px;
 }
@@ -104,7 +122,6 @@
 }
 
 .listCards .timer h4 {margin-top: 50px;}
-.listCards .chrono h4 {margin-top: 95px;}
 
 .listCards .card th
 {

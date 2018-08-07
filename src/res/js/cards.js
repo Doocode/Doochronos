@@ -18,7 +18,11 @@ var Card = function(title, className) { // Constructeur de Card
     // Génération du conteneur
     let contener = this.contener;
     contener.addClass('ctn');
-    card.append(contener);
+    
+    var content = $('<div/>').addClass('content');
+    content.append($('<div/>').addClass('align'));
+    content.append(contener);
+    card.append(content);
     
     // Génération du menu
     let menu = this.menu;
