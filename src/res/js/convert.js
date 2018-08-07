@@ -70,15 +70,15 @@ function Convert(n,mill,c,y,months,w,d,h,m,s)
         // Affichage des résultats du calcul
         let numbers = $('<div/>');
         numbers.addClass('numbers');
-        numbers.append(new Number('Millénaires',this.timeConverted.millennials));
-        numbers.append(new Number('Siècles',this.timeConverted.centuries));
-        numbers.append(new Number('Années',this.timeConverted.years));
-        numbers.append(new Number('Mois',this.timeConverted.months));
-        numbers.append(new Number('Semaines',this.timeConverted.weeks));
-        numbers.append(new Number('Jours',this.timeConverted.days));
-        numbers.append(new Number('Heures',this.timeConverted.hours));
-        numbers.append(new Number('Minutes',this.timeConverted.minutes));
-        numbers.append(new Number('Secondes',this.timeConverted.seconds));
+        numbers.append(genNumber('Millénaires',this.timeConverted.millennials));
+        numbers.append(genNumber('Siècles',this.timeConverted.centuries));
+        numbers.append(genNumber('Années',this.timeConverted.years));
+        numbers.append(genNumber('Mois',this.timeConverted.months));
+        numbers.append(genNumber('Semaines',this.timeConverted.weeks));
+        numbers.append(genNumber('Jours',this.timeConverted.days));
+        numbers.append(genNumber('Heures',this.timeConverted.hours));
+        numbers.append(genNumber('Minutes',this.timeConverted.minutes));
+        numbers.append(genNumber('Secondes',this.timeConverted.seconds));
         
         // Remplissage de la carte
         let card = this.card;
@@ -86,6 +86,8 @@ function Convert(n,mill,c,y,months,w,d,h,m,s)
         div.append($('<h4/>').html(this.name));
         div.append(numbers);
         card.setContent(div);
+        
+        numbers.addClass('contains'+$('#'+this.id+' .numbers .number').length);
     };
 }
 
@@ -96,3 +98,11 @@ var Number = function(title, number) { // Constructeur de Number
     ctn.append($('<h5/>').html(title));
     return ctn;
 };
+
+function genNumber(text,number)
+{
+    if(number>0)
+        return new Number(text,number);
+    else
+        return;
+}
