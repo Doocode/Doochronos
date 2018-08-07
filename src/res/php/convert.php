@@ -3,6 +3,9 @@
 	<div class="form">
 		<h1>Convertir le temps</h1>
 		
+		<h2>Nom de la carte</h2>
+		<input type="text" placeholder="Nom de la carte" value="Convertisseur" />
+		
 		<h2>Entrez le temps à convertir</h2>
 		<div class="numbers">
 			<div class="cell">

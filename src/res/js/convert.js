@@ -1,8 +1,8 @@
 // Définition de l'objet Convert
-function Convert(mill,c,y,months,w,d,h,m,s)
+function Convert(n,mill,c,y,months,w,d,h,m,s)
 {
 	// On affecte les attributs
-    this.name = '';
+    this.name = n;
 	this.type = 'convert';
     this.card = new Card(this.name, this.type); // On génère une carte
     this.id = this.card.id;
@@ -13,7 +13,18 @@ function Convert(mill,c,y,months,w,d,h,m,s)
     // On remplit la carte
     let icon = $('<img/>');
     icon.attr('src','res/img/convert.png');
-    this.card.object.append($('<center/>').append(icon));
+    this.card.setContent($('<center/>').append(icon));
+        
+    // Ajout des actions du menu
+    let id = this.id;
+    let actEdit   = new Action('Modifier','res/img/config-icon.png');
+    let actExpand = new Action('Agrandir','res/img/expand.png');
+    let actRemove = new Action('Supprimer','res/img/close.png');
+    actExpand.setFunction(function(){expandCard(id);});
+    actRemove.setFunction(function(){removeCard(id);});
+    this.card.addAction(actEdit,'edit');
+    this.card.addAction(actExpand,'expand');
+    this.card.addAction(actRemove,'');
 
 	// On ajoute cet item dans le tableau "listCards"
 	listCards.push(this);
@@ -21,16 +32,19 @@ function Convert(mill,c,y,months,w,d,h,m,s)
 	// Cette fonction sert à lancer la conversion
 	this.startConvert = function()
 	{
-		// On remet le temps en place pour éviter d'avoir un cadran du genre "00:135:2048" (h:m:s)
-		this.timeConverted.update();
-	
-		this.updateText();
-	
-		// On choisi une couleur dans le tableau pour faire genre le compteur est allumé
-		var i = this.id;
-		while(i>=4)
-			i -= 4;
-		$('#'+this.id).css('background',listColors[i]);
+		this.timeout = setTimeout(function ()
+		{
+            // On remet le temps en place pour éviter d'avoir un cadran du type "hhhhh:mmm:ssssss" (h:m:s)
+            this.timeConverted.update();
+
+            this.updateText();
+
+            // On choisi une couleur dans le tableau pour faire genre le compteur est allumé
+            var i = this.id;
+            while(i>=4)
+                i -= 4;
+            $('#'+this.id).css('background',listColors[i]);
+		}.bind(this), 1000);
     };
 	
     // La fonction expand permet d'agrandir/rétrecir la carte
@@ -52,12 +66,33 @@ function Convert(mill,c,y,months,w,d,h,m,s)
 	
 	// La fonction updateText sert à  mettre à  jour l'affichage de la "carte" du convertisseur
 	this.updateText = function()
-	{
-		checkExpand = ''; // C'est pour cocher ou non l'action Agrandir
-        if(this.isExpanded) // Si la carte est agrandie, alors faire cocher l'action Agrandir
-            checkExpand = 'checked';
+	{        
+        // Affichage des résultats du calcul
+        let numbers = $('<div/>');
+        numbers.addClass('numbers');
+        numbers.append(new Number('Millénaires',this.timeConverted.millennials));
+        numbers.append(new Number('Siècles',this.timeConverted.centuries));
+        numbers.append(new Number('Années',this.timeConverted.years));
+        numbers.append(new Number('Mois',this.timeConverted.months));
+        numbers.append(new Number('Semaines',this.timeConverted.weeks));
+        numbers.append(new Number('Jours',this.timeConverted.days));
+        numbers.append(new Number('Heures',this.timeConverted.hours));
+        numbers.append(new Number('Minutes',this.timeConverted.minutes));
+        numbers.append(new Number('Secondes',this.timeConverted.seconds));
         
-		var html = '<div class="ctn"><table><tr><th>Millénaires</th><th>Siècles</th><th>Années</th></tr><tr><td>' + this.timeConverted.millennials + '</td><td>' + this.timeConverted.centuries + '</td><td>' + this.timeConverted.years + '</td></tr><tr><th>Mois</th><th>Semaines</th><th>Jours</th></tr><tr><td>' + this.timeConverted.months + '</td><td>' + this.timeConverted.weeks + '</td><td>' + this.timeConverted.days + '</td></tr><tr><th>Heures</th><th>Minutes</th><th>Secondes</th></tr><tr><td>' + this.timeConverted.hours + '</td><td>' + this.timeConverted.minutes + '</td><td>' + this.timeConverted.seconds + '</td></tr><tr><th colspan="3" class="lastRow">Temps initial</th></tr><tr><td colspan="3">' + this.initialTime.toString() + '</td></tr></table></div><ul class="listActs"><li class="edit"><img src="res/img/config-icon.png" /><p>Modifier</p></li><li class="expand ' + checkExpand + '" onclick="expandCard(' + this.id + ');"><img src="res/img/expand.png" /><p>Agrandir</p></li><li onclick="removeCard(' + this.id + ');"><img src="res/img/close.png" /><p>Supprimer</p></li></ul>';
-		$('#'+this.id).html(html);
+        // Remplissage de la carte
+        let card = this.card;
+        let div = $('<div/>');
+        div.append(numbers);
+        div.append($('<h4/>').html(this.name));
+        card.setContent(div);
     };
 }
+
+var Number = function(title, number) { // Constructeur de Number
+    let ctn = $('<span/>'); // Objet HTML de la carte
+    ctn.addClass('number');
+    ctn.append($('<p/>').html(number));
+    ctn.append($('<h5/>').html(title));
+    return ctn;
+};

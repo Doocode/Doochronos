@@ -31,6 +31,7 @@ function addNewChrono() // Pour ajouter un chronomètre
 function addNewConvert() // Pour ajouter un convertisseur de temps
 {
     // On récupère tous les informations saisies par l'utilisateur
+	var name = $('#popupNewConvert input[type=text]').val(); // Le nom de la carte
 	var millennials = $('#popupNewConvert #millennials').val(); // Le nombre de millénaires
 	var centuries = $('#popupNewConvert #centuries').val(); // Le nombre de siècles
 	var years = $('#popupNewConvert #years').val(); // Le nombre d'années
@@ -41,7 +42,7 @@ function addNewConvert() // Pour ajouter un convertisseur de temps
 	var minutes = $('#popupNewConvert #mm').val(); // Le nombre de minutes
 	var seconds = $('#popupNewConvert #ss').val(); // Le nombre de secondes
 	
-	var card = new Convert(millennials,centuries,years,months,weeks,days,hours,minutes,seconds); // Création de la carte
+	var card = new Convert(name,millennials,centuries,years,months,weeks,days,hours,minutes,seconds); // Création de la carte
 	card.startConvert(); // Activation de la carte
 	
 	updateView(); // Mise à jour de l'affichage

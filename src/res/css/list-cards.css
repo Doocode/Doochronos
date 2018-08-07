@@ -82,6 +82,11 @@
 	margin: 0px;
 }
 
+.listCards .card .contener
+{
+	background: lime;
+}
+
 .listCards .card center img
 {
 	margin: 125px 0px;
@@ -129,31 +134,41 @@
 	width: 50%;
 }
 
-.listCards .convert th
+.listCards .convert .numbers
 {
-	width: 33%;
-	font-size: 16px;
+	width: 100%;
+	height: 100%;
+    font-size: 0;
+    text-align: center;
+}
+
+.listCards .convert .numbers .number
+{
+	width: calc(100% / 3);
+    display: inline-block;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+    margin-bottom: 20px;
+    margin-top: 15px;
 }
 
-.listCards .convert td
+.listCards .convert .numbers .number p
 {
-	width: 33%;
+	font-size: 30px;
 }
 
-.listCards .convert .lastRow
+.listCards .convert .numbers .number h5
 {
-	font-size: 18px;
-	padding-top: 10px;
+	text-transform: uppercase;
+    font-weight: normal;
+	font-size: 10px;
 }
 
-.listCards .convert tr:last-child td
+.listCards .convert h4
 {
-	font-size: 14px;
-	white-space: normal;
-	line-height: initial;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .listCards .card .listActs
