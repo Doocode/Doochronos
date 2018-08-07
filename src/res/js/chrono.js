@@ -91,7 +91,7 @@ function Chrono(n,a)
 	
 	// La fonction updateText sert à  mettre à  jour l'affichage de la "carte" du chrono
 	this.updateText = function()
-	{        
+	{
         // Mise à jour de l'affichage
         let name = $('<h4/>');
         let time = $('<h5/>');
@@ -100,6 +100,5 @@ function Chrono(n,a)
         time.html(this.elapsedTime.toString());
         div.append(name).append(time);
         this.card.setContent(div);
-        
     };
 }
