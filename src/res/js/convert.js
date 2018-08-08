@@ -50,14 +50,15 @@ function Convert(n,mill,c,y,months,w,d,h,m,s)
     // La fonction expand permet d'agrandir/rétrecir la carte
 	this.expand = function()
 	{
+        let card = this.card.object;
         if(this.isExpanded)
         {
-            $('#'+this.id).removeClass('expanded');
+            card.removeClass('expanded');
             $('#'+this.id+' .expand').removeClass('checked');
         }
         else
         {
-            $('#'+this.id).addClass('expanded');
+            card.addClass('expanded');
             $('#'+this.id+' .listActs .expand').addClass('checked');
         }
         
@@ -89,20 +90,4 @@ function Convert(n,mill,c,y,months,w,d,h,m,s)
         
         numbers.addClass('contains'+$('#'+this.id+' .numbers .number').length);
     };
-}
-
-var Number = function(title, number) { // Constructeur de Number
-    let ctn = $('<span/>'); // Objet HTML de la carte
-    ctn.addClass('number');
-    ctn.append($('<p/>').html(number));
-    ctn.append($('<h5/>').html(title));
-    return ctn;
-};
-
-function genNumber(text,number)
-{
-    if(number>0)
-        return new Number(text,number);
-    else
-        return;
 }

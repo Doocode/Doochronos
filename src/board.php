@@ -46,6 +46,7 @@
         <!-- Importation de quelques scripts JS -->
         <script src="res/js/time.js"></script>
         <script src="res/js/timeplus.js"></script>
+        <script src="res/js/number.js"></script>
         <script src="res/js/timer.js"></script>
         <script src="res/js/chrono.js"></script>
         <script src="res/js/convert.js"></script>
