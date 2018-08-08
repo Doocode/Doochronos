@@ -1,32 +1,43 @@
 // Définition de l'objet Timer (pour le minuteur)
 function Timer(n,h,m,s,a)
 {
-	// On incrémente "cardId" pour créer un identifiant pour cet objet
-	cardId++;
-	
-	// On affecte les valeurs
+	// On affecte les attributs
     this.name = n;
-	this.remainingTime = new Time(h,m,s);
+	this.type = 'timer';
+    this.card = new Card(this.name, this.type); // On génère une carte
+    this.id = this.card.id;
+    this.remainingTime = new Time(h,m,s);
 	this.initialTime = new Time(h,m,s);
 	this.elapsedTime = new Time(0,0,0);
     this.alarm = a;
     this.isExpanded = false;
-    this.id = cardId;
 	this.interval;
 	
-	// La fonction type sert à définir le type de l'objet
-	this.type = function()
-	{
-		return 'timer';
-    };
+    // On remplit la carte
+    let icon = $('<img/>');
+    icon.attr('src','res/img/timer.png');
+    this.card.setContent($('<center/>').append(icon));
+        
+    // Ajout des actions du menu
+    let id = this.id;
+    let actPause   = new Action('Pause','res/img/pause.png');
+    let actReprise = new Action('Reprise','res/img/reprise.png');
+    let actEdit    = new Action('Modifier','res/img/config-icon.png');
+    let actExpand  = new Action('Agrandir','res/img/expand.png');
+    let actRemove  = new Action('Supprimer','res/img/close.png');
+    actPause.setFunction(function(){pauseCard(id);});
+    actReprise.setFunction(function(){repriseTimer(id);});
+    actExpand.setFunction(function(){expandCard(id);});
+    actRemove.setFunction(function(){removeCard(id);});
+    this.card.addAction(actPause,   'pause');
+    this.card.addAction(actReprise, 'reprise');
+    this.card.addAction(actEdit,    'edit');
+    this.card.addAction(actExpand,  'expand');
+    this.card.addAction(actRemove,  '');
 	
 	// On remet le temps en place pour éviter d'avoir un cadran du genre "00:135:2048" (h:m:s)
 	this.remainingTime.update();
 	this.initialTime.update();
-	
-	// On prépare le code html pour l'affichage du temps sur une "carte"
-	var html = '<div class="card timer" id="' + this.id + '"><center><img src="res/img/timer.png" /></center></div>';
-	$(html).prependTo($('.listCards')); // On place le code de "html" dans ".listCards"
 	
 	// On ajoute cet item dans le tableau "listCards"
 	listCards.push(this);
@@ -47,7 +58,7 @@ function Timer(n,h,m,s,a)
 				this.updateText();
 	
 				// On choisi une couleur dans le tableau pour faire genre le compteur est allumé
-				var i = this.id-1;
+				var i = this.id;
 				while(i>=4)
 					i -= 4;
 				$('#'+this.id).css('background',listColors[i]);
@@ -66,12 +77,27 @@ function Timer(n,h,m,s,a)
 	// La fonction updateText sert à mettre à jour l'affichage de la "carte" du minuteur
 	this.updateText = function()
 	{
-        checkExpand = ''; // C'est pour cocher ou non l'action Agrandir
-        if(this.isExpanded) // Si la carte est agrandie, alors faire cocher l'action Agrandir
-            checkExpand = 'checked';
+        // Mise à jour de l'affichage
+        let name = $('<h4/>');
+        let time = $('<h5/>');
+        let div = $('<div/>');
+        name.html(this.name);
+        time.html(this.remainingTime.toString());
+        div.append(name).append(time);
         
-		var html = '<div class="ctn"><h1>' + this.remainingTime.toString() + '</h1><h4>' + this.name + '</h4><table><tr><th>Temps initial</th><th>Durée écoulé</th></tr><tr><td>' + this.initialTime.toString() + '</td><td>' + this.elapsedTime.toString() + ' </td></tr></table></div><ul class="listActs"><li class="pause" onclick="pauseCard(' + this.id + '); "><img src="res/img/pause.png" /><p>Pause</p></li><li class="reprise" onclick="repriseTimer(' + this.id + ');"><img src="res/img/reprise.png" /><p>Reprendre</p></li><li class="edit"><img src="res/img/config-icon.png" /><p>Modifier</p></li><li class="expand ' + checkExpand + '" onclick="expandCard(' + this.id + ');"><img src="res/img/expand.png" /><p>Agrandir</p></li><li onclick="removeCard(' + this.id + ');"><img src="res/img/close.png" /><p>Supprimer</p></li></ul>';
-		$('#'+this.id).html(html);
+        let table = $('<table/>');
+        let tr1 = $('<tr/>');
+        let tr2 = $('<tr/>');
+        let th1 = $('<th/>').html('Temps initial');
+        let td1 = $('<td/>').html(this.initialTime.toString());
+        let th2 = $('<th/>').html('Durée écoulé');
+        let td2 = $('<td/>').html(this.elapsedTime.toString());
+        tr1.append(th1).append(th2);
+        tr2.append(td1).append(td2);
+        table.append(tr1).append(tr2);
+        div.append(table);
+        
+        this.card.setContent(div);
     };
 	
     // La fonction stopTimer sert à arreter la boucle qui permet d'actualiser la carte à chaque seconde

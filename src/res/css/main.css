@@ -1,42 +1,12 @@
 @font-face
 {
-    font-family: 'RobotoRegular';
-	src: url('../font/Roboto/Roboto-Regular.ttf');
-}
-@font-face
-{
-    font-family: 'RobotoLight';
-	src: url('../font/Roboto/Roboto-Light.ttf');
-}
-@font-face
-{
-    font-family: 'RobotoBold';
-	src: url('../font/Roboto/Roboto-Black.ttf');
-}
-@font-face
-{
-    font-family: 'RobotoThin';
-	src: url('../font/Roboto/Roboto-Thin.ttf');
-}
-@font-face
-{
-    font-family: 'RobotoCondensed-Light';
-	src: url('../font/Roboto_Condensed/RobotoCondensed-Light.ttf');
-}
-@font-face
-{
-    font-family: 'RobotoCondensed';
-	src: url('../font/Roboto_Condensed/RobotoCondensed-Regular.ttf');
-}
-@font-face
-{
     font-family: 'MontserratRegular';
 	src: url('../font/Montserrat/Montserrat-Regular.ttf');
 }
 
 *
 {
-	font-family: 'RobotoRegular', segoe ui, ubuntu, trebuchet ms, arial, serif;
+	font-family: 'MontserratRegular', segoe ui, ubuntu, trebuchet ms, arial, serif;
 }
 
 body
@@ -60,37 +30,6 @@ body
 	-ms-transition-duration: 1s;
 }
 
-
-/*
-input[type=text],input[type=password],textarea
-{
-	border: none;
-	border-bottom: 1px solid rgba(0,0,0,.5);
-	background: white;
-	padding: 10px 0px;
-	color: black;
-	font-size: 16px;
-	margin: 5px 0px;
-	width: 300px;
-	font-family: 'RobotoRegular', segoe ui, trebuchet ms, tahoma, verdana, arial, serif;
-	
-	-webkit-transition: all .3s ease;
-       -moz-transition: all .3s ease;
-        -ms-transition: all .3s ease;
-         -o-transition: all .3s ease;
-            transition: all .3s ease;
-}
-
-input[type=text]:focus,input[type=password]:focus,textarea:focus
-{
-	border-bottom: 1px solid rgb(255,100,0);
-	color: rgb(255,100,0);
-}*/
-
-
-
-
-
 input[type=submit],input[type=reset],input[type=image],input[type=button],button
 {
 	border: 3px solid rgb(255,0,100);
@@ -99,7 +38,6 @@ input[type=submit],input[type=reset],input[type=image],input[type=button],button
 	padding: 8px 20px;
 	color: white;
 	font-size: 12px;
-    font-family: 'MontserratRegular','RobotoRegular', segoe ui, trebuchet ms, tahoma, verdana, arial, serif;
 	cursor: pointer;
 	white-space: normal;
     

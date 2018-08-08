@@ -8,16 +8,31 @@ function Time(h,m,s)
 	// Cette fonction sert à obtenir le temps sous la forme 00:00:00 plutôt que 00:0:0 par exemple
 	this.toString = function()
 	{
-		var strHours = this.hours, strMinutes = this.minutes, strSeconds = this.seconds;
-		
-		if(strHours<10)
-			strHours='0'+strHours;
-		if(strMinutes<10)
-			strMinutes='0'+strMinutes;
-		if(strSeconds<10)
-			strSeconds='0'+strSeconds;
-		
-		return strHours + ':' + strMinutes + ':' + strSeconds;
+        if(this.hours>0)
+        {
+            var strHours = this.hours, strMinutes = this.minutes, strSeconds = this.seconds;
+
+            if(strHours<10)
+                strHours='0'+strHours;
+            if(strMinutes<10)
+                strMinutes='0'+strMinutes;
+            if(strSeconds<10)
+                strSeconds='0'+strSeconds;
+            
+            return strHours+':'+strMinutes+':'+strSeconds;
+        }
+        else
+        {
+            if(this.minutes>0)
+            {
+                if(this.seconds>0)
+                    return this.minutes+'min '+this.seconds+'s';
+                else
+                    return this.minutes+'min';
+            }
+            else
+                return this.seconds+'s';
+        }
 	};
 	
 	// Cette fonction sert à remettre le temps sous la forme 24:59:59 pour éviter d'avoir un cadran du genre "00:135:2048" (h:m:s)

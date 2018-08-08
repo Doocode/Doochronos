@@ -1,125 +1,28 @@
-body
-{
-	background-color: rgb(50,50,50);
-	background-repeat: no-repeat;
-	background-size: cover;
-    background-attachment: fixed;
-	background-position: center center;
-    padding-top: 45px;
-}
-
-.central
-{
-	position: fixed;
-	top: 45px;
-	left: 0px;
-	right: 0px;
-	bottom: 0px;
-	
-	overflow: auto;
-	color: white;
-	text-align: center;
-    font-size: 0px;
-    pointer-events: none;
-}
-
-.central * {pointer-events: all;}
-
-.central .aligner
-{
-	width: 0px;
-	height: 100%;
-}
-
-.central .aligner,
-.central .app
-{
-	display: inline-block;
-	vertical-align: middle;
-}
-
-.central .app
-{
-    width: 100%;
-}
-
-.central *
-{
-	font-family: 'RobotoRegular', trebuchet ms, tahoma, verdana, arial, serif;	
-}
-
-.central h1
-{
-	font-weight: normal;
-	font-size: 28px;
-	color: white;
-	font-family: 'RobotoLight','RobotoRegular',  trebuchet ms, tahoma, verdana, arial, serif;
-}
-
-.central p
-{
-	font-size: 14px;
-	max-width: 700px;
-	line-height: 30px;
-    margin: 20px auto;
-}
-
-input[type=submit],input[type=reset],input[type=image],input[type=button],button
-{
-	border: 2px solid white;
-	background: white;
-	padding: 8px 25px;
-	min-width: 150px;
-	margin: 5px;
-    text-transform: uppercase;
-    border-radius: 50px;
-    color: rgb(50,50,50);
-}
-
-input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[type=button]:hover,button:hover
-{
-	background: transparent;
-	color: white;
-	border: 2px solid white;
-}
-
-/* Ecran d'introduction */
-.welcome img
-{
-    width: 60px;
-}
-
-.welcome h1
-{
-	font-family: 'MontserratRegular','RobotoRegular', segoe ui, trebuchet ms, tahoma, verdana, arial, serif;
-    font-size: 28px;
-    width: 400px;
-    margin: 25px auto;
-}
-
 /* Liste des cartes */
 .listCards
 {
-	overflow: hidden;
-	overflow-x: hidden;
 	font-size: 0px;
 	padding: 0 30px;
 	display: none;
     text-align: center;
 }
 
+.listCards .card,
+.listCards .card .ctn
+{
+	height: 250px;
+	width: 250px;
+}
+
 .listCards .card
 {
 	display: inline-block;
 	vertical-align: middle;
-	height: 300px;
-	width: 300px;
 	padding: 20px;
 	background: rgb(35,35,35);
 	border-radius: 5px;
-    box-shadow: 10px 10px 0 rgba(0,0,0,.2);
+    box-shadow: 0 3px 10px rgba(0,0,0,.3);
 	margin: 15px;
-	text-align: left;
 	cursor: default;
     color: #fff;
 	overflow: hidden;
@@ -143,24 +46,17 @@ input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[t
 
 .listCards .card.expanded
 {
-	width: 670px;
-}
-
-.listCards .card .ctn
-{
-	height: 300px;
-	width: 300px;
+	width: 570px;
 }
 
 .finished::before,
 .paused::before
 {
 	content: "Terminé";
-	background: rgba(0,0,0,.9);
-	text-shadow: 0px 0px 10px black;
-	font-family: 'Roboto', trebuchet ms, tahoma, verdana, arial, serif;
+	background: rgba(0,0,0,.3);
 	font-size: 20px;
 	text-transform: uppercase;
+    text-align: left;
 	padding: 20px;
 	display: block;
 	
@@ -182,31 +78,55 @@ input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[t
 	margin: 0px;
 }
 
+.listCards .card .content
+{
+	width: 250px;
+	height: 250px;
+}
+
+.listCards .card .content .align,
+.listCards .card .content .ctn
+{
+	height: initial;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.listCards .card .content .align
+{
+	height: 100%;
+}
+
 .listCards .card center img
 {
-	margin: 125px 0px;
 	max-height: 50px;
 	max-width: 50px;
 }
 
-.listCards .card h1
+.listCards .card h5
 {
-	font-size: 45px;
-	margin-top: -10px;
-	font-family: 'RobotoRegular', trebuchet ms, tahoma, verdana, arial, serif;
+    font-size: 35px;
+    font-weight: normal;
 }
 
 .listCards .convert p
 {
 	font-size: 18px;
-	font-family: 'RobotoRegular', trebuchet ms, tahoma, verdana, arial, serif;
 }
 
 .listCards .card h4,
 .listCards .card th
 {
-	font-family: 'RobotoCondensed', trebuchet ms, tahoma, verdana, arial, serif;
 	font-weight: normal;
+    font-size: 16px;
+}
+
+.listCards .timer h4 {margin-top: 50px;}
+
+.listCards .card th
+{
+	text-transform: uppercase;
+    font-size: 12px;
 }
 
 .listCards .card table
@@ -217,13 +137,14 @@ input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[t
 
 .listCards .timer table
 {
-	margin-top: 160px;
+    margin-top: 60px;
+    border-top: 2px solid #fff;
+    padding-top: 20px;
 }
 
 .listCards .card td
 {
-	font-size: 27px;
-	font-family: 'RobotoLight', trebuchet ms, tahoma, verdana, arial, serif;
+	font-size: 22px;
 	margin-top: -5px;
 }
 
@@ -232,32 +153,39 @@ input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[t
 	width: 50%;
 }
 
-.listCards .convert th
+.listCards .convert .numbers
 {
-	width: 33%;
-	font-size: 16px;
+	width: 100%;
+	height: 100%;
+    font-size: 0;
+}
+
+.listCards .convert .numbers .number
+{
+	width: calc(100% / 3);
+    display: inline-block;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+    margin-bottom: 20px;
 }
 
-.listCards .convert td
+.listCards .convert .numbers .number p
 {
-	width: 33%;
+	font-size: 30px;
 }
 
-.listCards .convert .lastRow
+.listCards .convert .numbers .number h5
 {
-	font-size: 18px;
-	padding-top: 10px;
+	text-transform: uppercase;
+    font-weight: normal;
+	font-size: 10px;
 }
 
-.listCards .convert tr:last-child td
+.listCards .convert h4
 {
-	font-size: 14px;
-	white-space: normal;
-	line-height: initial;
-	font-family: 'RobotoRegular', trebuchet ms, tahoma, verdana, arial, serif;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 .listCards .card .listActs
@@ -266,6 +194,7 @@ input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[t
 	overflow: hidden;
 	list-style: none;
 	padding: 10px 0px;
+    text-align: left;
 	margin: 0px;
 	opacity: 0;
 	
@@ -312,8 +241,8 @@ input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[t
 
 .listCards .card.expanded .listActs
 {
-	left: 355px;
-    width: 355px;
+	left: 305px;
+    width: 305px;
 }
 
 .listCards .card .listActs li
@@ -374,5 +303,4 @@ input[type=submit]:hover,input[type=reset]:hover,input[type=image]:hover,input[t
 {
 	font-size: 14px;
 	margin-left: 10px;
-    font-family: 'MontserratRegular','RobotoRegular', segoe ui, trebuchet ms, tahoma, verdana, arial, serif;
 }

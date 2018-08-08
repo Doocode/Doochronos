@@ -48,6 +48,7 @@
 	margin-right: 10px;
 	padding: 15px;
 	background: rgba(0,0,0,.5);
+    box-shadow: 0 3px 10px rgba(0,0,0,.3);
 	border-radius: 100px;
 	font-size: 0px;
 	cursor: pointer;
@@ -136,11 +137,10 @@
 .toolBar p
 {
 	background: rgba(0,0,0,.8);
-	padding: 5px 10px;
-	margin: 0px 10px;
+	padding: 10px 15px;
+	margin: 0;
 	color: white;
-	font-size: 18px;
-	font-family: 'RobotoLight', trebuchet ms, tahoma, verdana, arial, serif;
+	font-size: 16px;
 	display: none;
 	border-radius: 4px;
 	vertical-align: middle;

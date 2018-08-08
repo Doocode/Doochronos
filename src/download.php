@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
-        <link rel="stylesheet" href="res/css/animate.css" />
-        <link rel="stylesheet" href="res/css/main.css" />
-        <link rel="stylesheet" href="res/css/header.css" />
+        <?php include("res/php/head.php"); ?>
         <link rel="stylesheet" href="res/css/page.css" />
-		<link rel="icon" type="image/png" href="res/img/favicon.png" />
         <title>Doochronos > Télécharger</title>
     </head>
 
     <body>
         <?php include("res/php/header.php"); ?>
+        <script>setCurrentPage('#downloadPage');</script>
 		
 		<div class="presentation" style="background-image: url(res/img/download.png);">
-			<h1>Télécharger Doochronos</h1>
+			<h1>Télécharger</h1>
 		</div>
 		
 		<div class="page">
