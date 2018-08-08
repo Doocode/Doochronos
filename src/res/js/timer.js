@@ -20,15 +20,18 @@ function Timer(n,h,m,s,a)
         
     // Ajout des actions du menu
     let id = this.id;
+    let actRestart = new Action('Relancer','res/img/restart.png');
     let actPause   = new Action('Pause','res/img/pause.png');
     let actReprise = new Action('Reprise','res/img/reprise.png');
     let actEdit    = new Action('Modifier','res/img/config-icon.png');
     let actExpand  = new Action('Agrandir','res/img/expand.png');
     let actRemove  = new Action('Supprimer','res/img/close.png');
+    actRestart.setFunction(function(){listCards[id].restart();});
     actPause.setFunction(function(){pauseCard(id);});
     actReprise.setFunction(function(){repriseTimer(id);});
     actExpand.setFunction(function(){expandCard(id);});
     actRemove.setFunction(function(){removeCard(id);});
+    this.card.addAction(actRestart, 'restart');
     this.card.addAction(actPause,   'pause');
     this.card.addAction(actReprise, 'reprise');
     this.card.addAction(actEdit,    'edit');
@@ -113,6 +116,31 @@ function Timer(n,h,m,s,a)
 		$('#'+this.id+' .pause').css('display','none');
 		$('#'+this.id+' .reprise').css('display','block');
 		clearInterval(this.interval);
+	};
+	   
+    // La fonction restart permet de relancer le minuteur
+	this.restart = function()
+	{
+		this.stopTimer();
+	
+        // On remplit la carte
+        let icon = $('<img/>');
+        icon.attr('src','res/img/timer.png');
+        this.card.setContent($('<center/>').append(icon));
+        
+        // On réinitialise les attributs
+        let h,m,s;
+        h = this.initialTime.hours;
+        m = this.initialTime.minutes;
+        s = this.initialTime.seconds;
+        this.remainingTime = new Time(h,m,s);
+        this.elapsedTime = new Time(0,0,0);
+        this.card.object.removeClass('finished');
+        this.card.object.removeClass('paused');
+        $('#'+this.id+' .reprise').css('display','none');
+		$('#'+this.id+' .pause').css('display','block');
+        
+        this.startTimer();
 	};
 	
     // La fonction expand permet d'agrandir/rétrecir la carte
