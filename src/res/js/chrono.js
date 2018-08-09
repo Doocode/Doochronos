@@ -18,15 +18,18 @@ function Chrono(n,a)
         
     // Ajout des actions du menu
     let id = this.id;
+    let actRestart = new Action('Recommencer','res/img/restart.png');
     let actPause   = new Action('Pause','res/img/pause.png');
     let actReprise = new Action('Reprise','res/img/reprise.png');
     let actEdit    = new Action('Modifier','res/img/config-icon.png');
     let actExpand  = new Action('Agrandir','res/img/expand.png');
     let actRemove  = new Action('Supprimer','res/img/close.png');
+    actRestart.setFunction(function(){listCards[id].restart();});
     actPause.setFunction(function(){pauseCard(id);});
     actReprise.setFunction(function(){repriseTimer(id);});
     actExpand.setFunction(function(){expandCard(id);});
     actRemove.setFunction(function(){removeCard(id);});
+    this.card.addAction(actRestart, 'restart');
     this.card.addAction(actPause,   'pause');
     this.card.addAction(actReprise, 'reprise');
     this.card.addAction(actEdit,    'edit');
@@ -70,6 +73,26 @@ function Chrono(n,a)
 		$('#'+this.id+' .pause').css('display','block');
 		$('#'+this.id+' .reprise').css('display','none');
 		this.startChrono();
+	};
+	   
+    // La fonction restart permet de relancer le chronomètre
+	this.restart = function()
+	{
+		clearInterval(this.interval);
+	
+        // On remplit la carte
+        let icon = $('<img/>');
+        icon.attr('src','res/img/chrono.png');
+        this.card.setContent($('<center/>').append(icon));
+        
+        // On réinitialise les attributs
+        this.elapsedTime = new Time(0,0,0);
+        this.card.object.removeClass('finished');
+        this.card.object.removeClass('paused');
+        $('#'+this.id+' .reprise').css('display','none');
+		$('#'+this.id+' .pause').css('display','block');
+        
+        this.startChrono();
 	};
 	
     // La fonction expand permet d'agrandir/rétrecir la carte
