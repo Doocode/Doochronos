@@ -50,19 +50,7 @@ function Convert(n,mill,c,y,months,w,d,h,m,s)
     // La fonction expand permet d'agrandir/rétrecir la carte
 	this.expand = function()
 	{
-        let card = this.card.object;
-        if(this.isExpanded)
-        {
-            card.removeClass('expanded');
-            $('#'+this.id+' .expand').removeClass('checked');
-        }
-        else
-        {
-            card.addClass('expanded');
-            $('#'+this.id+' .listActs .expand').addClass('checked');
-        }
-        
-		this.isExpanded = !this.isExpanded;
+        this.card.expand();
 	};
 	
 	// La fonction updateText sert à  mettre à  jour l'affichage de la "carte" du convertisseur

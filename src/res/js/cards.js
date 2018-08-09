@@ -8,6 +8,7 @@ var Card = function(title, className) { // Constructeur de Card
     this.object = $('<div/>'); // Objet HTML de la carte
     this.contener = $('<div/>'); // Conteneur de la carte
     this.menu = $('<div/>'); // Conteneur de la carte
+    this.isExpanded = false;
 
     // Génération de la carte
     let card = this.object;
@@ -51,5 +52,20 @@ Card.prototype = {
         this.menu.append(item);
         
         return this;
+    },
+    expand : function(){
+        let card = this.object;
+        if(this.isExpanded)
+        {
+            card.removeClass('expanded');
+            $('#'+this.id+' .expand').removeClass('checked');
+        }
+        else
+        {
+            card.addClass('expanded');
+            $('#'+this.id+' .listActs .expand').addClass('checked');
+        }
+        
+		this.isExpanded = !this.isExpanded;
     }
 };

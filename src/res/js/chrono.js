@@ -75,18 +75,7 @@ function Chrono(n,a)
     // La fonction expand permet d'agrandir/rétrecir la carte
 	this.expand = function()
 	{
-        if(this.isExpanded)
-        {
-            $('#'+this.id).removeClass('expanded');
-            $('#'+this.id+' .expand').removeClass('checked');
-        }
-        else
-        {
-            $('#'+this.id).addClass('expanded');
-            $('#'+this.id+' .listActs .expand').addClass('checked');
-        }
-        
-		this.isExpanded = !this.isExpanded;
+        this.card.expand();
 	};
 	
 	// La fonction updateText sert à  mettre à  jour l'affichage de la "carte" du chrono

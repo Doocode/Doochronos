@@ -146,18 +146,7 @@ function Timer(n,h,m,s,a)
     // La fonction expand permet d'agrandir/rétrecir la carte
 	this.expand = function()
 	{
-        if(this.isExpanded)
-        {
-            $('#'+this.id).removeClass('expanded');
-            $('#'+this.id+' .expand').removeClass('checked');
-        }
-        else
-        {
-            $('#'+this.id).addClass('expanded');
-            $('#'+this.id+' .listActs .expand').addClass('checked');
-        }
-        
-		this.isExpanded = !this.isExpanded;
+        this.card.expand();
 	};
 	
     // La fonction reprise permet de réactiver la carte si elle est en pause
